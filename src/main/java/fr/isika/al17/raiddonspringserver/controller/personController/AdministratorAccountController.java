@@ -1,4 +1,4 @@
-package fr.isika.al17.raiddonspringserver.controller;
+package fr.isika.al17.raiddonspringserver.controller.personController;
 
 import java.net.URI;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import fr.isika.al17.raiddonspringserver.dao.personManagement.AdministratorAccountRepository;
+import fr.isika.al17.raiddonspringserver.dao.personRepository.AdministratorAccountRepository;
 import fr.isika.al17.raiddonspringserver.models.personManagement.AdministratorAccount;
 import io.swagger.annotations.Api;
 
@@ -27,8 +27,8 @@ public class AdministratorAccountController {
     @Autowired
     AdministratorAccountRepository administratorAccountRepository;
     
-    @PostMapping(path="/addInsured")
-    public ResponseEntity<Void> createInsured(@Valid @RequestBody AdministratorAccount administratorAccount){
+    @PostMapping(path="/addAdministratorAccount")
+    public ResponseEntity<Void> createAdministratorAccount(@Valid @RequestBody AdministratorAccount administratorAccount){
 	
 	AdministratorAccount addedAdmin = administratorAccountRepository.save(administratorAccount);
 	
@@ -45,12 +45,12 @@ public class AdministratorAccountController {
     }
     
     @DeleteMapping (path="/administratorAccount/{id}")
-    public void deleteInsured(@PathVariable Integer id) {
+    public void deleteAdministratorAccount(@PathVariable Integer id) {
 	administratorAccountRepository.deleteById(id);
     }
     
     @PutMapping (path="/updateAdministratorAccount")
-    public void editInsured(@RequestBody AdministratorAccount administratorAccount) {
+    public void editAdministratorAccount(@RequestBody AdministratorAccount administratorAccount) {
 	administratorAccountRepository.save(administratorAccount);
     }
 

@@ -1,6 +1,6 @@
 package fr.isika.al17.raiddonspringserver.models.enumerationClasses.reputations;
 
-public enum Reputations {
+public enum ReputationName {
     
     ALLIANCE_VANGUARD("Alliance Vanguard"), 
     HORDE_EXPEDITION("Horde Expedition"), 
@@ -14,7 +14,7 @@ public enum Reputations {
     ORACLES("The Oracles");
     private String label;
     
-    private Reputations(String label) {
+    private ReputationName(String label) {
 	this.label = label;
     }
 

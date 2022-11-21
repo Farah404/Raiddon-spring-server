@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "'jwt.secret' is the secret key of the JWT token generator that this application is using."
+  },
+  {
+    "name": "angular.url",
+    "type": "java.lang.String",
+    "description": "'angular.url' is the url address exposed by the front-end client."
+  },
+  {
+    "name": "mysql.port",
+    "type": "java.lang.String",
+    "description": "'mysql.port' is the port exposed by the MySQL database."
+  },
+  {
+    "name": "email.username",
+    "type": "java.lang.String",
+    "description": "'email.username' is the address of the email box which will send emails to users."
+  },
+  {
+    "name": "email.password",
+    "type": "java.lang.String",
+    "description": "'email.password' is the password of the email box which will send emails to users."
+  }
+]}

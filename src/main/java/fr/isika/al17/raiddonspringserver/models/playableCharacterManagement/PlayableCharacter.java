@@ -1,4 +1,6 @@
-package fr.isika.al17.raiddonspringserver.models.playableCharactersManagement;
+package fr.isika.al17.raiddonspringserver.models.playableCharacterManagement;
+
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -15,7 +17,7 @@ import fr.isika.al17.raiddonspringserver.models.enumerationClasses.playableChara
 import fr.isika.al17.raiddonspringserver.models.enumerationClasses.playableCharacters.Specialisation;
 import fr.isika.al17.raiddonspringserver.models.enumerationClasses.professions.ProfessionSpecialisation;
 import fr.isika.al17.raiddonspringserver.models.enumerationClasses.professions.Professions;
-import fr.isika.al17.raiddonspringserver.models.guildsManagement.Guild;
+import fr.isika.al17.raiddonspringserver.models.guildManagement.Guild;
 import fr.isika.al17.raiddonspringserver.models.lootManagement.Equipmnet;
 
 @Entity
@@ -76,7 +78,7 @@ public class PlayableCharacter {
     private Guild guild;
     
     @OneToMany
-    private Reputation reputation;
+    private Set<Reputation> reputations;
 
     public PlayableCharacter() {
 	super();
@@ -88,7 +90,7 @@ public class PlayableCharacter {
 	    Specialisation playableCharacterSpecialisationMain, Specialisation playableCharacterSpecialisationSecondary,
 	    Professions firstProfession, ProfessionSpecialisation firstProfessionSpecialisation,
 	    Professions secondProfession, ProfessionSpecialisation secondProfessionSpecialisation, GuildRanks guildRank,
-	    Equipmnet equipment, Guild guild, Reputation reputation) {
+	    Equipmnet equipment, Guild guild, Set<Reputation> reputations) {
 	super();
 	this.id = id;
 	this.ilevel = ilevel;
@@ -110,7 +112,7 @@ public class PlayableCharacter {
 	this.guildRank = guildRank;
 	this.equipment = equipment;
 	this.guild = guild;
-	this.reputation = reputation;
+	this.reputations = reputations;
     }
 
     public Integer getId() {
@@ -273,27 +275,14 @@ public class PlayableCharacter {
         this.guild = guild;
     }
 
-    public Reputation getReputation() {
-        return reputation;
+    public Set<Reputation> getReputations() {
+        return reputations;
     }
 
-    public void setReputation(Reputation reputation) {
-        this.reputation = reputation;
+    public void setReputations(Set<Reputation> reputations) {
+        this.reputations = reputations;
     }
+    
+    
 
-    @Override
-    public String toString() {
-	return "PlayableCharacter [id=" + id + ", ilevel=" + ilevel + ", hasGuild=" + hasGuild + ", canCook=" + canCook
-		+ ", canFish=" + canFish + ", canFirstAid=" + canFirstAid + ", wowLogLink=" + wowLogLink
-		+ ", characterLevel=" + characterLevel + ", playableCharacterFaction=" + playableCharacterFaction
-		+ ", playableCharacterAllianceRace=" + playableCharacterAllianceRace + ", playableCharacterClass="
-		+ playableCharacterClass + ", playableCharacterSpecialisationMain="
-		+ playableCharacterSpecialisationMain + ", playableCharacterSpecialisationSecondary="
-		+ playableCharacterSpecialisationSecondary + ", firstProfession=" + firstProfession
-		+ ", firstProfessionSpecialisation=" + firstProfessionSpecialisation + ", secondProfession="
-		+ secondProfession + ", secondProfessionSpecialisation=" + secondProfessionSpecialisation
-		+ ", guildRank=" + guildRank + ", equipment=" + equipment + ", guild=" + guild + ", reputation="
-		+ reputation + "]";
-    }
-
-}
+   }

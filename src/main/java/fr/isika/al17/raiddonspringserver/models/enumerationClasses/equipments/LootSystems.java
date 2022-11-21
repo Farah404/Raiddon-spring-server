@@ -1,6 +1,6 @@
-package fr.isika.al17.raiddonspringserver.models.enumerationClasses.guilds;
+package fr.isika.al17.raiddonspringserver.models.enumerationClasses.equipments;
 
-public enum GuildLootSystems {
+public enum LootSystems {
 
     RAND("Guild Master"), 
     ATTRIBUTION("Guild Officer"),
@@ -9,7 +9,7 @@ public enum GuildLootSystems {
     
     private String label;
     
-    private GuildLootSystems(String label) {
+    private LootSystems(String label) {
 	this.label = label;
     }
 
