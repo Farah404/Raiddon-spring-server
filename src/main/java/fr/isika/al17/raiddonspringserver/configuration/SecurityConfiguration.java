@@ -24,7 +24,7 @@ import fr.isika.al17.raiddonspringserver.filter.JwtAuthorizationFilter;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    
+
     private JwtAuthorizationFilter jwtAuthorizationFilter;
     private JwtAccessDeniedHandler jwtAccessDeniedHandler;
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -44,17 +44,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	auth.userDetailsService(this.userDetailsService).passwordEncoder(this.bCryptPasswordEncoder);
-    }
-
-    @Override
     protected void configure(HttpSecurity http) throws Exception {
 	http.csrf().disable().cors().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 		.and().authorizeRequests().antMatchers(SecurityConstant.PUBLIC_URLS).permitAll().anyRequest()
 		.authenticated().and().exceptionHandling().accessDeniedHandler(jwtAccessDeniedHandler)
 		.authenticationEntryPoint(jwtAuthenticationEntryPoint).and()
 		.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	auth.userDetailsService(this.userDetailsService).passwordEncoder(this.bCryptPasswordEncoder);
     }
 
     @Bean

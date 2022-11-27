@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,8 +40,10 @@ import fr.isika.al17.raiddonspringserver.models.User;
 import fr.isika.al17.raiddonspringserver.service.UserService;
 import fr.isika.al17.raiddonspringserver.utils.JwtUtility;
 
+
 @RestController
 @RequestMapping(value = { "/", "/user" })
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController extends ExceptionHandling {
 
     public static final String USER_DELETED_SUCCESSFULLY = "User deleted successfully.";
@@ -55,6 +58,16 @@ public class UserController extends ExceptionHandling {
 	this.authenticationManager = authenticationManager;
 	this.jwtUtility = jwtUtility;
     }
+    
+    @PostMapping("/register")
+	public ResponseEntity<User> register(@RequestBody User user) throws UserNotFoundException, UsernameExistsException, EmailExistsException, MessagingException {
+		User newUser = userService.register(
+				user.getFirstname(), 
+				user.getLastname(),
+				user.getUsername(),
+				user.getEmail());
+		return new ResponseEntity<User>(newUser, HttpStatus.OK);
+	}
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
@@ -64,17 +77,7 @@ public class UserController extends ExceptionHandling {
 	HttpHeaders jwtHeaders = getJwtHeader(customUserDetails);
 	return new ResponseEntity<User>(loginUser, jwtHeaders, HttpStatus.OK);
     }
-    
 
-	@PostMapping("/register")
-	public ResponseEntity<User> register(@RequestBody User user) throws UserNotFoundException, UsernameExistsException, EmailExistsException, MessagingException {
-		User newUser = userService.register(
-				user.getFirstname(), 
-				user.getLastname(),
-				user.getUsername(),
-				user.getEmail());
-		return new ResponseEntity<User>(newUser, HttpStatus.OK);
-	}
 
     @PostMapping("/add")
     @PreAuthorize("hasAnyAuthority('user:create')")
@@ -89,70 +92,69 @@ public class UserController extends ExceptionHandling {
 		Boolean.parseBoolean(isNotLocked), Boolean.parseBoolean(isActive), profileImage);
 	return new ResponseEntity<User>(newUser, HttpStatus.OK);
     }
-    
+
     @PostMapping("/update")
-	@PreAuthorize("hasAnyAuthority('user:update')")
-	public ResponseEntity<User> updateUser (
-			@RequestParam("currentUsername") String currentUserName,
-			@RequestParam("firstname") String firstName,
-			@RequestParam("lastname") String lastName,
-			@RequestParam("username") String userName,
-			@RequestParam("email") String email,
-			@RequestParam("role") String role,
-			@RequestParam("isActive") String isActive,
-			@RequestParam("isNotLocked") String isNotLocked,
-			@RequestParam(value = "profileImage", required = false) MultipartFile profileImage
-			) throws UserNotFoundException, UsernameExistsException, EmailExistsException, IOException, NotAnImageFileException {
-		User updatedUser = userService.updateUser(currentUserName, firstName, lastName, userName, email, role, 
-				Boolean.parseBoolean(isNotLocked), Boolean.parseBoolean(isActive), profileImage);
-		return new ResponseEntity<User>(updatedUser, HttpStatus.OK); 
-	}
-    
+    @PreAuthorize("hasAnyAuthority('user:update')")
+    public ResponseEntity<User> updateUser(@RequestParam("currentUsername") String currentUserName,
+	    @RequestParam("firstname") String firstName, @RequestParam("lastname") String lastName,
+	    @RequestParam("username") String userName, @RequestParam("email") String email,
+	    @RequestParam("role") String role, @RequestParam("isActive") String isActive,
+	    @RequestParam("isNotLocked") String isNotLocked,
+	    @RequestParam(value = "profileImage", required = false) MultipartFile profileImage)
+	    throws UserNotFoundException, UsernameExistsException, EmailExistsException, IOException,
+	    NotAnImageFileException {
+	User updatedUser = userService.updateUser(currentUserName, firstName, lastName, userName, email, role,
+		Boolean.parseBoolean(isNotLocked), Boolean.parseBoolean(isActive), profileImage);
+	return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
+    }
+
     @GetMapping("/find/{username}")
-	@PreAuthorize("hasAnyAuthority('user:read')")
-	public ResponseEntity<User> getUser(@PathVariable("username") String username) {
-		User user = userService.findByUsername(username);
-		return new ResponseEntity<User>(user, HttpStatus.OK);
-	}
-    
+    @PreAuthorize("hasAnyAuthority('user:read')")
+    public ResponseEntity<User> getUser(@PathVariable("username") String username) {
+	User user = userService.findByUsername(username);
+	return new ResponseEntity<User>(user, HttpStatus.OK);
+    }
+
     @GetMapping(path = "/image/profile/{userName}", produces = MediaType.IMAGE_JPEG_VALUE)
-	public byte[] getTempProfileImage(@PathVariable("userName") String userName) throws IOException {
-		URL url = new URL (FileConstant.TEMP_PROFILE_IMAGE_BASE_URL + userName + FileConstant.VARIATION_HUMAN);
-		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-		try (InputStream inputStream = url.openStream()) {
-			int bytesRead;
-			byte[] chunk = new byte[1024];
-			while ((bytesRead = inputStream.read(chunk)) > 0) {
-				byteArrayOutputStream.write(chunk, 0, bytesRead);
-			}
-		}
-		return byteArrayOutputStream.toByteArray();
+    public byte[] getTempProfileImage(@PathVariable("userName") String userName) throws IOException {
+	URL url = new URL(FileConstant.TEMP_PROFILE_IMAGE_BASE_URL + userName + FileConstant.VARIATION_HUMAN);
+	ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+	try (InputStream inputStream = url.openStream()) {
+	    int bytesRead;
+	    byte[] chunk = new byte[1024];
+	    while ((bytesRead = inputStream.read(chunk)) > 0) {
+		byteArrayOutputStream.write(chunk, 0, bytesRead);
+	    }
 	}
-	
-	@GetMapping(path = "/image/{userName}/{fileName}", produces = MediaType.IMAGE_JPEG_VALUE)
-	public byte[] getProfileImage(@PathVariable("userName") String userName, @PathVariable("fileName") String fileName) throws IOException {
-		return Files.readAllBytes(Paths.get(FileConstant.USER_FOLDER + userName + FileConstant.FORWARD_SLASH + fileName));
-	}
-	
-	@GetMapping("/test")
-	public String getTest() {
-		return "ok";
-	}
-	
-	private ResponseEntity<HttpResponse> response(HttpStatus httpStatus, String message) {
-		return new ResponseEntity<HttpResponse>(new HttpResponse(httpStatus.value(), httpStatus, httpStatus.getReasonPhrase().toUpperCase(),
-            message), httpStatus); // 2nd argument should be httpStatus or httpStatus.OK ?
-	}
+	return byteArrayOutputStream.toByteArray();
+    }
 
-	private HttpHeaders getJwtHeader(CustomUserDetails customUserDetails) {
-		HttpHeaders headers = new HttpHeaders();
-		headers.add(SecurityConstant.TOKEN_HEADER, jwtUtility.generateJwtToken(customUserDetails));
-		return headers;
-	}
+    @GetMapping(path = "/image/{userName}/{fileName}", produces = MediaType.IMAGE_JPEG_VALUE)
+    public byte[] getProfileImage(@PathVariable("userName") String userName, @PathVariable("fileName") String fileName)
+	    throws IOException {
+	return Files
+		.readAllBytes(Paths.get(FileConstant.USER_FOLDER + userName + FileConstant.FORWARD_SLASH + fileName));
+    }
 
-	private void authenticate(String userName, String passWord) {
-		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, passWord));
-	}
-	
+    @GetMapping("/test")
+    public String getTest() {
+	return "ok";
+    }
+
+    private ResponseEntity<HttpResponse> response(HttpStatus httpStatus, String message) {
+	return new ResponseEntity<HttpResponse>(
+		new HttpResponse(httpStatus.value(), httpStatus, httpStatus.getReasonPhrase().toUpperCase(), message),
+		httpStatus); // 2nd argument should be httpStatus or httpStatus.OK ?
+    }
+
+    private HttpHeaders getJwtHeader(CustomUserDetails customUserDetails) {
+	HttpHeaders headers = new HttpHeaders();
+	headers.add(SecurityConstant.TOKEN_HEADER, jwtUtility.generateJwtToken(customUserDetails));
+	return headers;
+    }
+
+    private void authenticate(String userName, String passWord) {
+	authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName, passWord));
+    }
 
 }

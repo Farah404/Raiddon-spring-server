@@ -113,7 +113,7 @@ public class UserServiceImplementation implements UserService, UserDetailsServic
 	user.setNotLocked(true);
 	userRepository.save(user);
 	LOGGER.info("New user password: " + passWord);
-	emailService.sendNewPassWordEmail(firstName, passWord, email);
+//	emailService.sendNewPassWordEmail(firstName, passWord, email);
 	return user;
     }
 
