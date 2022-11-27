@@ -43,7 +43,7 @@ import fr.isika.al17.raiddonspringserver.utils.JwtUtility;
 
 @RestController
 @RequestMapping(value = { "/", "/user" })
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController extends ExceptionHandling {
 
     public static final String USER_DELETED_SUCCESSFULLY = "User deleted successfully.";
