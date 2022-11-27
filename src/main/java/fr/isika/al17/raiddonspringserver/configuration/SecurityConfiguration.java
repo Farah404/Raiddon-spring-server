@@ -1,5 +1,7 @@
 package fr.isika.al17.raiddonspringserver.configuration;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -10,12 +12,12 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import fr.isika.al17.raiddonspringserver.constant.SecurityConstant;
 import fr.isika.al17.raiddonspringserver.filter.JwtAccessDeniedHandler;
 import fr.isika.al17.raiddonspringserver.filter.JwtAuthenticationEntryPoint;
 import fr.isika.al17.raiddonspringserver.filter.JwtAuthorizationFilter;
@@ -24,7 +26,7 @@ import fr.isika.al17.raiddonspringserver.filter.JwtAuthorizationFilter;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    
+
     private JwtAuthorizationFilter jwtAuthorizationFilter;
     private JwtAccessDeniedHandler jwtAccessDeniedHandler;
     private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
@@ -44,17 +46,27 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-	auth.userDetailsService(this.userDetailsService).passwordEncoder(this.bCryptPasswordEncoder);
+    protected void configure(HttpSecurity http) throws Exception {
+
+	http.csrf().disable().cors().disable().httpBasic().and().authorizeRequests()
+	.antMatchers("/**").permitAll().anyRequest().authenticated();
+    } 
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+	CorsConfiguration configuration = new CorsConfiguration();
+	configuration.setAllowedOrigins(Arrays.asList("*"));
+	// or any domain that you want to restrict to
+	configuration.setAllowedHeaders(Arrays.asList("Origin", "Content-Type", "Accept", "Authorization"));
+	configuration.setAllowedMethods(Arrays.asList("GET", "POST"));
+	// Add the method support as you like
+	UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+	source.registerCorsConfiguration("/**", configuration);
+	return source;
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-	http.csrf().disable().cors().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and().authorizeRequests().antMatchers(SecurityConstant.PUBLIC_URLS).permitAll().anyRequest()
-		.authenticated().and().exceptionHandling().accessDeniedHandler(jwtAccessDeniedHandler)
-		.authenticationEntryPoint(jwtAuthenticationEntryPoint).and()
-		.addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	auth.userDetailsService(this.userDetailsService).passwordEncoder(this.bCryptPasswordEncoder);
     }
 
     @Bean
