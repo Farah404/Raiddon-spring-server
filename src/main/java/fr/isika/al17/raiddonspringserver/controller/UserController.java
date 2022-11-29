@@ -144,7 +144,7 @@ public class UserController extends ExceptionHandling {
     private ResponseEntity<HttpResponse> response(HttpStatus httpStatus, String message) {
 	return new ResponseEntity<HttpResponse>(
 		new HttpResponse(httpStatus.value(), httpStatus, httpStatus.getReasonPhrase().toUpperCase(), message),
-		httpStatus); // 2nd argument should be httpStatus or httpStatus.OK ?
+		httpStatus);
     }
 
     private HttpHeaders getJwtHeader(CustomUserDetails customUserDetails) {

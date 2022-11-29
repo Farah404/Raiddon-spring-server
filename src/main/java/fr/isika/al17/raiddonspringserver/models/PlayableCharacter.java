@@ -23,15 +23,15 @@ public class PlayableCharacter {
     
     @Id
     @GeneratedValue
-    private Integer id;
-    
-    private Integer ilevel;
+    private Long id;
+    private String chatacterName;
+    private Long ilevel;
     private boolean hasGuild;
     private boolean canCook;
     private boolean canFish;
     private boolean canFirstAid;
     private String wowLogLink;
-    private Integer characterLevel;
+    private Long characterLevel;
     
     // Defining FACTION
     @Enumerated(EnumType.STRING)
@@ -82,15 +82,17 @@ public class PlayableCharacter {
 	super();
     }
 
-    public PlayableCharacter(Integer id, Integer ilevel, boolean hasGuild, boolean canCook, boolean canFish,
-	    boolean canFirstAid, String wowLogLink, Integer characterLevel, Factions playableCharacterFaction,
-	    Races playableCharacterAllianceRace, PlayableClasses playableCharacterClass,
-	    Specialisation playableCharacterSpecialisationMain, Specialisation playableCharacterSpecialisationSecondary,
-	    Professions firstProfession, ProfessionSpecialisation firstProfessionSpecialisation,
-	    Professions secondProfession, ProfessionSpecialisation secondProfessionSpecialisation, GuildRanks guildRank,
-	    Equipmnet equipment, Guild guild, Set<Reputation> reputations) {
+    public PlayableCharacter(Long id, String chatacterName, Long ilevel, boolean hasGuild, boolean canCook,
+	    boolean canFish, boolean canFirstAid, String wowLogLink, Long characterLevel,
+	    Factions playableCharacterFaction, Races playableCharacterAllianceRace,
+	    PlayableClasses playableCharacterClass, Specialisation playableCharacterSpecialisationMain,
+	    Specialisation playableCharacterSpecialisationSecondary, Professions firstProfession,
+	    ProfessionSpecialisation firstProfessionSpecialisation, Professions secondProfession,
+	    ProfessionSpecialisation secondProfessionSpecialisation, GuildRanks guildRank, Equipmnet equipment,
+	    Guild guild, Set<Reputation> reputations) {
 	super();
 	this.id = id;
+	this.chatacterName = chatacterName;
 	this.ilevel = ilevel;
 	this.hasGuild = hasGuild;
 	this.canCook = canCook;
@@ -113,19 +115,27 @@ public class PlayableCharacter {
 	this.reputations = reputations;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getIlevel() {
+    public String getChatacterName() {
+        return chatacterName;
+    }
+
+    public void setChatacterName(String chatacterName) {
+        this.chatacterName = chatacterName;
+    }
+
+    public Long getIlevel() {
         return ilevel;
     }
 
-    public void setIlevel(Integer ilevel) {
+    public void setIlevel(Long ilevel) {
         this.ilevel = ilevel;
     }
 
@@ -169,11 +179,11 @@ public class PlayableCharacter {
         this.wowLogLink = wowLogLink;
     }
 
-    public Integer getCharacterLevel() {
+    public Long getCharacterLevel() {
         return characterLevel;
     }
 
-    public void setCharacterLevel(Integer characterLevel) {
+    public void setCharacterLevel(Long characterLevel) {
         this.characterLevel = characterLevel;
     }
 
@@ -280,7 +290,6 @@ public class PlayableCharacter {
     public void setReputations(Set<Reputation> reputations) {
         this.reputations = reputations;
     }
-    
-    
 
+    
    }

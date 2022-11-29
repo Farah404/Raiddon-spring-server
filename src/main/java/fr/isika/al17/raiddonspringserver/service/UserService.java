@@ -33,5 +33,5 @@ public interface UserService {
 	void resetPassWord(String email) throws EmailNotFoundException, MessagingException;
 	
 	User updateProfileImage(String userName, MultipartFile profileImage) throws UserNotFoundException, UsernameExistsException, EmailExistsException, IOException, NotAnImageFileException;
-
+	
 }
