@@ -15,7 +15,7 @@ public class Raid {
     
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
     
     private RaidName raidName;
     
@@ -35,7 +35,7 @@ public class Raid {
 	super();
     }
 
-    public Raid(Integer id, RaidName raidName, String raidZone, Integer raidTotalEncounters, Date raidPullTimeDate,
+    public Raid(Long id, RaidName raidName, String raidZone, Integer raidTotalEncounters, Date raidPullTimeDate,
 	    Date raidOffTimeDate, RaidDifficulty raidDifficulty, LootSystems raidLootSystem) {
 	super();
 	this.id = id;
@@ -48,11 +48,11 @@ public class Raid {
 	this.raidLootSystem = raidLootSystem;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

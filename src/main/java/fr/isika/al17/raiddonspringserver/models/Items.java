@@ -9,7 +9,7 @@ public class Items {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     private String itemName;
     private String itemDropZone;
@@ -19,7 +19,7 @@ public class Items {
 	super();
     }
 
-    public Items(Integer id, String itemName, String itemDropZone, String itemDropEncounter) {
+    public Items(Long id, String itemName, String itemDropZone, String itemDropEncounter) {
 	super();
 	this.id = id;
 	this.itemName = itemName;
@@ -27,11 +27,11 @@ public class Items {
 	this.itemDropEncounter = itemDropEncounter;
     }
 
-    public Integer getId() {
+    public Long getId() {
 	return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
 	this.id = id;
     }
 

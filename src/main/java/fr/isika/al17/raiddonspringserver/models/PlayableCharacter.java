@@ -1,295 +1,283 @@
 package fr.isika.al17.raiddonspringserver.models;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-import fr.isika.al17.raiddonspringserver.enumerationClasses.Factions;
 import fr.isika.al17.raiddonspringserver.enumerationClasses.GuildRanks;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.PlayableClasses;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.ProfessionSpecialisation;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.Professions;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.Races;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.Specialisation;
 
 @Entity
 public class PlayableCharacter {
-    
+
     @Id
     @GeneratedValue
     private Long id;
-    private String chatacterName;
     private Long ilevel;
+    private Long level;
+
+    private String name;
+    private String wowLogLink;
+    private String realm;
+    private String faction;
+    private String race;
+    private String playableClass;
+
+    private String mainSpec;
+    private String secondarySpec;
+    private String mainRole;
+    private String secondaryRole;
+    private String firstProfession;
+    private String secondProfession;
+
     private boolean hasGuild;
     private boolean canCook;
     private boolean canFish;
     private boolean canFirstAid;
-    private String wowLogLink;
-    private Long characterLevel;
-    
-    // Defining FACTION
-    @Enumerated(EnumType.STRING)
-    private Factions playableCharacterFaction;
-    
-    // Defining RACE
-    @Enumerated(EnumType.STRING)
-    private Races playableCharacterAllianceRace;
 
-    // Defining CLASS
-    @Enumerated(EnumType.STRING)
-    private PlayableClasses playableCharacterClass;   
-    
-    // Defining MAIN SPEC
-    @Enumerated(EnumType.STRING)
-    private Specialisation playableCharacterSpecialisationMain; 
-    
-    //Defining SECONDARY SPEC
-    @Enumerated(EnumType.STRING)
-    private Specialisation playableCharacterSpecialisationSecondary; 
-    
-    // Defining FIRST PROFESSION
-    @Enumerated(EnumType.STRING)
-    private Professions firstProfession;
-    @Enumerated(EnumType.STRING)
-    private ProfessionSpecialisation firstProfessionSpecialisation;
-    
-    // Defining SECOND PROFESSION
-    @Enumerated(EnumType.STRING)
-    private Professions secondProfession;
-    @Enumerated(EnumType.STRING)
-    private ProfessionSpecialisation secondProfessionSpecialisation;
-    
-    // Defining GUILD RANK
     @Enumerated(EnumType.STRING)
     private GuildRanks guildRank;
-    
+
     @OneToOne
-    private Equipmnet equipment;
-    
+    private Equipment equipment;
+
     @OneToOne
     private Guild guild;
-    
-    @OneToMany
-    private Set<Reputation> reputations;
+
+    @OneToOne
+    private Preferences preferences;
+
+    @ManyToOne
+    private User user;
 
     public PlayableCharacter() {
 	super();
     }
 
-    public PlayableCharacter(Long id, String chatacterName, Long ilevel, boolean hasGuild, boolean canCook,
-	    boolean canFish, boolean canFirstAid, String wowLogLink, Long characterLevel,
-	    Factions playableCharacterFaction, Races playableCharacterAllianceRace,
-	    PlayableClasses playableCharacterClass, Specialisation playableCharacterSpecialisationMain,
-	    Specialisation playableCharacterSpecialisationSecondary, Professions firstProfession,
-	    ProfessionSpecialisation firstProfessionSpecialisation, Professions secondProfession,
-	    ProfessionSpecialisation secondProfessionSpecialisation, GuildRanks guildRank, Equipmnet equipment,
-	    Guild guild, Set<Reputation> reputations) {
+    public PlayableCharacter(Long id, Long ilevel, Long level, String name, String wowLogLink, String realm,
+	    String faction, String race, String playableClass, String mainSpec, String secondarySpec, String mainRole,
+	    String secondaryRole, String firstProfession, String secondProfession, boolean hasGuild, boolean canCook,
+	    boolean canFish, boolean canFirstAid, GuildRanks guildRank, Equipment equipment, Guild guild,
+	    Preferences preferences, User user) {
 	super();
 	this.id = id;
-	this.chatacterName = chatacterName;
 	this.ilevel = ilevel;
+	this.level = level;
+	this.name = name;
+	this.wowLogLink = wowLogLink;
+	this.realm = realm;
+	this.faction = faction;
+	this.race = race;
+	this.playableClass = playableClass;
+	this.mainSpec = mainSpec;
+	this.secondarySpec = secondarySpec;
+	this.mainRole = mainRole;
+	this.secondaryRole = secondaryRole;
+	this.firstProfession = firstProfession;
+	this.secondProfession = secondProfession;
 	this.hasGuild = hasGuild;
 	this.canCook = canCook;
 	this.canFish = canFish;
 	this.canFirstAid = canFirstAid;
-	this.wowLogLink = wowLogLink;
-	this.characterLevel = characterLevel;
-	this.playableCharacterFaction = playableCharacterFaction;
-	this.playableCharacterAllianceRace = playableCharacterAllianceRace;
-	this.playableCharacterClass = playableCharacterClass;
-	this.playableCharacterSpecialisationMain = playableCharacterSpecialisationMain;
-	this.playableCharacterSpecialisationSecondary = playableCharacterSpecialisationSecondary;
-	this.firstProfession = firstProfession;
-	this.firstProfessionSpecialisation = firstProfessionSpecialisation;
-	this.secondProfession = secondProfession;
-	this.secondProfessionSpecialisation = secondProfessionSpecialisation;
 	this.guildRank = guildRank;
 	this.equipment = equipment;
 	this.guild = guild;
-	this.reputations = reputations;
+	this.preferences = preferences;
+	this.user = user;
     }
 
     public Long getId() {
-        return id;
+	return id;
     }
 
     public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getChatacterName() {
-        return chatacterName;
-    }
-
-    public void setChatacterName(String chatacterName) {
-        this.chatacterName = chatacterName;
+	this.id = id;
     }
 
     public Long getIlevel() {
-        return ilevel;
+	return ilevel;
     }
 
     public void setIlevel(Long ilevel) {
-        this.ilevel = ilevel;
+	this.ilevel = ilevel;
     }
 
-    public boolean isHasGuild() {
-        return hasGuild;
+    public Long getLevel() {
+	return level;
     }
 
-    public void setHasGuild(boolean hasGuild) {
-        this.hasGuild = hasGuild;
+    public void setLevel(Long level) {
+	this.level = level;
     }
 
-    public boolean isCanCook() {
-        return canCook;
+    public String getName() {
+	return name;
     }
 
-    public void setCanCook(boolean canCook) {
-        this.canCook = canCook;
-    }
-
-    public boolean isCanFish() {
-        return canFish;
-    }
-
-    public void setCanFish(boolean canFish) {
-        this.canFish = canFish;
-    }
-
-    public boolean isCanFirstAid() {
-        return canFirstAid;
-    }
-
-    public void setCanFirstAid(boolean canFirstAid) {
-        this.canFirstAid = canFirstAid;
+    public void setName(String name) {
+	this.name = name;
     }
 
     public String getWowLogLink() {
-        return wowLogLink;
+	return wowLogLink;
     }
 
     public void setWowLogLink(String wowLogLink) {
-        this.wowLogLink = wowLogLink;
+	this.wowLogLink = wowLogLink;
     }
 
-    public Long getCharacterLevel() {
-        return characterLevel;
+    public String getRealm() {
+	return realm;
     }
 
-    public void setCharacterLevel(Long characterLevel) {
-        this.characterLevel = characterLevel;
+    public void setRealm(String realm) {
+	this.realm = realm;
     }
 
-    public Factions getPlayableCharacterFaction() {
-        return playableCharacterFaction;
+    public String getFaction() {
+	return faction;
     }
 
-    public void setPlayableCharacterFaction(Factions playableCharacterFaction) {
-        this.playableCharacterFaction = playableCharacterFaction;
+    public void setFaction(String faction) {
+	this.faction = faction;
     }
 
-    public Races getPlayableCharacterAllianceRace() {
-        return playableCharacterAllianceRace;
+    public String getRace() {
+	return race;
     }
 
-    public void setPlayableCharacterAllianceRace(Races playableCharacterAllianceRace) {
-        this.playableCharacterAllianceRace = playableCharacterAllianceRace;
+    public void setRace(String race) {
+	this.race = race;
     }
 
-    public PlayableClasses getPlayableCharacterClass() {
-        return playableCharacterClass;
+    public String getPlayableClass() {
+	return playableClass;
     }
 
-    public void setPlayableCharacterClass(PlayableClasses playableCharacterClass) {
-        this.playableCharacterClass = playableCharacterClass;
+    public void setPlayableClass(String playableClass) {
+	this.playableClass = playableClass;
     }
 
-    public Specialisation getPlayableCharacterSpecialisationMain() {
-        return playableCharacterSpecialisationMain;
+    public String getMainSpec() {
+	return mainSpec;
     }
 
-    public void setPlayableCharacterSpecialisationMain(Specialisation playableCharacterSpecialisationMain) {
-        this.playableCharacterSpecialisationMain = playableCharacterSpecialisationMain;
+    public void setMainSpec(String mainSpec) {
+	this.mainSpec = mainSpec;
     }
 
-    public Specialisation getPlayableCharacterSpecialisationSecondary() {
-        return playableCharacterSpecialisationSecondary;
+    public String getSecondarySpec() {
+	return secondarySpec;
     }
 
-    public void setPlayableCharacterSpecialisationSecondary(Specialisation playableCharacterSpecialisationSecondary) {
-        this.playableCharacterSpecialisationSecondary = playableCharacterSpecialisationSecondary;
+    public void setSecondarySpec(String secondarySpec) {
+	this.secondarySpec = secondarySpec;
     }
 
-    public Professions getFirstProfession() {
-        return firstProfession;
+    public String getMainRole() {
+	return mainRole;
     }
 
-    public void setFirstProfession(Professions firstProfession) {
-        this.firstProfession = firstProfession;
+    public void setMainRole(String mainRole) {
+	this.mainRole = mainRole;
     }
 
-    public ProfessionSpecialisation getFirstProfessionSpecialisation() {
-        return firstProfessionSpecialisation;
+    public String getSecondaryRole() {
+	return secondaryRole;
     }
 
-    public void setFirstProfessionSpecialisation(ProfessionSpecialisation firstProfessionSpecialisation) {
-        this.firstProfessionSpecialisation = firstProfessionSpecialisation;
+    public void setSecondaryRole(String secondaryRole) {
+	this.secondaryRole = secondaryRole;
     }
 
-    public Professions getSecondProfession() {
-        return secondProfession;
+    public String getFirstProfession() {
+	return firstProfession;
     }
 
-    public void setSecondProfession(Professions secondProfession) {
-        this.secondProfession = secondProfession;
+    public void setFirstProfession(String firstProfession) {
+	this.firstProfession = firstProfession;
     }
 
-    public ProfessionSpecialisation getSecondProfessionSpecialisation() {
-        return secondProfessionSpecialisation;
+    public String getSecondProfession() {
+	return secondProfession;
     }
 
-    public void setSecondProfessionSpecialisation(ProfessionSpecialisation secondProfessionSpecialisation) {
-        this.secondProfessionSpecialisation = secondProfessionSpecialisation;
+    public void setSecondProfession(String secondProfession) {
+	this.secondProfession = secondProfession;
+    }
+
+    public boolean isHasGuild() {
+	return hasGuild;
+    }
+
+    public void setHasGuild(boolean hasGuild) {
+	this.hasGuild = hasGuild;
+    }
+
+    public boolean isCanCook() {
+	return canCook;
+    }
+
+    public void setCanCook(boolean canCook) {
+	this.canCook = canCook;
+    }
+
+    public boolean isCanFish() {
+	return canFish;
+    }
+
+    public void setCanFish(boolean canFish) {
+	this.canFish = canFish;
+    }
+
+    public boolean isCanFirstAid() {
+	return canFirstAid;
+    }
+
+    public void setCanFirstAid(boolean canFirstAid) {
+	this.canFirstAid = canFirstAid;
     }
 
     public GuildRanks getGuildRank() {
-        return guildRank;
+	return guildRank;
     }
 
     public void setGuildRank(GuildRanks guildRank) {
-        this.guildRank = guildRank;
+	this.guildRank = guildRank;
     }
 
-    public Equipmnet getEquipment() {
-        return equipment;
+    public Equipment getEquipment() {
+	return equipment;
     }
 
-    public void setEquipment(Equipmnet equipment) {
-        this.equipment = equipment;
+    public void setEquipment(Equipment equipment) {
+	this.equipment = equipment;
     }
 
     public Guild getGuild() {
-        return guild;
+	return guild;
     }
 
     public void setGuild(Guild guild) {
-        this.guild = guild;
+	this.guild = guild;
     }
 
-    public Set<Reputation> getReputations() {
-        return reputations;
+    public Preferences getPreferences() {
+	return preferences;
     }
 
-    public void setReputations(Set<Reputation> reputations) {
-        this.reputations = reputations;
+    public void setPreferences(Preferences preferences) {
+	this.preferences = preferences;
+    }
+    public User getUser() {
+	return user;
     }
 
-    
-   }
+    public void setUser(User user) {
+	this.user = user;
+    }
+
+}

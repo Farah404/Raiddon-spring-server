@@ -6,11 +6,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
-public class Equipmnet {
+public class Equipment {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     @OneToOne
     private Items headItem;
@@ -47,11 +47,11 @@ public class Equipmnet {
     @OneToOne
     private Items relicItem;
 
-    public Equipmnet() {
+    public Equipment() {
 	super();
     }
 
-    public Equipmnet(Integer id, Items headItem, Items shoulderItem, Items backItem, Items chestItem, Items wristItem,
+    public Equipment(Long id, Items headItem, Items shoulderItem, Items backItem, Items chestItem, Items wristItem,
 	    Items handItem, Items waistItem, Items legsItem, Items feetItem, Items neckItem, Items firstTingItem,
 	    Items secondRingItem, Items firstTrinketItem, Items secondTrinketItem, Items mainHandItem,
 	    Items offHandItem, Items relicItem) {
@@ -76,11 +76,11 @@ public class Equipmnet {
 	this.relicItem = relicItem;
     }
 
-    public Integer getId() {
+    public Long getId() {
 	return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
 	this.id = id;
     }
 
