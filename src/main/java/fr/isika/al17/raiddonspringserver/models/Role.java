@@ -2,6 +2,8 @@ package fr.isika.al17.raiddonspringserver.models;
 
 import javax.persistence.*;
 
+import fr.isika.al17.raiddonspringserver.enumerationClasses.ERole;
+
 @Entity
 @Table(name = "roles")
 public class Role {

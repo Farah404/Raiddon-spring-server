@@ -2,8 +2,8 @@ package fr.isika.al17.raiddonspringserver.enumerationClasses;
 
 public enum LootSystems {
 
-    RAND("Guild Master"), 
-    ATTRIBUTION("Guild Officer"),
+    RAND("Random"), 
+    ATTRIBUTION("Attribution by Loot master"),
     DRAGON_KILL_POINTS("DKP Dragon Kill Points"),
     GOLD_DRAGON_KILL_POINTS("Gold Dragon Kill Points");
     
