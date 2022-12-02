@@ -3,7 +3,6 @@ package fr.isika.al17.raiddonspringserver.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Equipment {
@@ -12,49 +11,32 @@ public class Equipment {
     @GeneratedValue
     private Long id;
 
-    @OneToOne
-    private Items headItem;
-    @OneToOne
-    private Items shoulderItem;
-    @OneToOne
-    private Items backItem;
-    @OneToOne
-    private Items chestItem;
-    @OneToOne
-    private Items wristItem;
-    @OneToOne
-    private Items handItem;
-    @OneToOne
-    private Items waistItem;
-    @OneToOne
-    private Items legsItem;
-    @OneToOne
-    private Items feetItem;
-    @OneToOne
-    private Items neckItem;
-    @OneToOne
-    private Items firstTingItem;
-    @OneToOne
-    private Items secondRingItem;
-    @OneToOne
-    private Items firstTrinketItem;
-    @OneToOne
-    private Items secondTrinketItem;
-    @OneToOne
-    private Items mainHandItem;
-    @OneToOne
-    private Items offHandItem;
-    @OneToOne
-    private Items relicItem;
+    private String headItem;
+    private String shoulderItem;
+    private String backItem;
+    private String chestItem;
+    private String wristItem;
+    private String handItem;
+    private String waistItem;
+    private String legsItem;
+    private String feetItem;
+    private String neckItem;
+    private String firstRingItem;
+    private String secondRingItem;
+    private String firstTrinketItem;
+    private String secondTrinketItem;
+    private String mainHandItem;
+    private String offHandItem;
+    private String relicItem;
 
     public Equipment() {
 	super();
     }
 
-    public Equipment(Long id, Items headItem, Items shoulderItem, Items backItem, Items chestItem, Items wristItem,
-	    Items handItem, Items waistItem, Items legsItem, Items feetItem, Items neckItem, Items firstTingItem,
-	    Items secondRingItem, Items firstTrinketItem, Items secondTrinketItem, Items mainHandItem,
-	    Items offHandItem, Items relicItem) {
+    public Equipment(Long id, String headItem, String shoulderItem, String backItem, String chestItem, String wristItem,
+	    String handItem, String waistItem, String legsItem, String feetItem, String neckItem, String firstRingItem,
+	    String secondRingItem, String firstTrinketItem, String secondTrinketItem, String mainHandItem,
+	    String offHandItem, String relicItem) {
 	super();
 	this.id = id;
 	this.headItem = headItem;
@@ -67,7 +49,7 @@ public class Equipment {
 	this.legsItem = legsItem;
 	this.feetItem = feetItem;
 	this.neckItem = neckItem;
-	this.firstTingItem = firstTingItem;
+	this.firstRingItem = firstRingItem;
 	this.secondRingItem = secondRingItem;
 	this.firstTrinketItem = firstTrinketItem;
 	this.secondTrinketItem = secondTrinketItem;
@@ -84,139 +66,139 @@ public class Equipment {
 	this.id = id;
     }
 
-    public Items getHeadItem() {
+    public String getHeadItem() {
 	return headItem;
     }
 
-    public void setHeadItem(Items headItem) {
+    public void setHeadItem(String headItem) {
 	this.headItem = headItem;
     }
 
-    public Items getShoulderItem() {
+    public String getShoulderItem() {
 	return shoulderItem;
     }
 
-    public void setShoulderItem(Items shoulderItem) {
+    public void setShoulderItem(String shoulderItem) {
 	this.shoulderItem = shoulderItem;
     }
 
-    public Items getBackItem() {
+    public String getBackItem() {
 	return backItem;
     }
 
-    public void setBackItem(Items backItem) {
+    public void setBackItem(String backItem) {
 	this.backItem = backItem;
     }
 
-    public Items getChestItem() {
+    public String getChestItem() {
 	return chestItem;
     }
 
-    public void setChestItem(Items chestItem) {
+    public void setChestItem(String chestItem) {
 	this.chestItem = chestItem;
     }
 
-    public Items getWristItem() {
+    public String getWristItem() {
 	return wristItem;
     }
 
-    public void setWristItem(Items wristItem) {
+    public void setWristItem(String wristItem) {
 	this.wristItem = wristItem;
     }
 
-    public Items getHandItem() {
+    public String getHandItem() {
 	return handItem;
     }
 
-    public void setHandItem(Items handItem) {
+    public void setHandItem(String handItem) {
 	this.handItem = handItem;
     }
 
-    public Items getWaistItem() {
+    public String getWaistItem() {
 	return waistItem;
     }
 
-    public void setWaistItem(Items waistItem) {
+    public void setWaistItem(String waistItem) {
 	this.waistItem = waistItem;
     }
 
-    public Items getLegsItem() {
+    public String getLegsItem() {
 	return legsItem;
     }
 
-    public void setLegsItem(Items legsItem) {
+    public void setLegsItem(String legsItem) {
 	this.legsItem = legsItem;
     }
 
-    public Items getFeetItem() {
+    public String getFeetItem() {
 	return feetItem;
     }
 
-    public void setFeetItem(Items feetItem) {
+    public void setFeetItem(String feetItem) {
 	this.feetItem = feetItem;
     }
 
-    public Items getNeckItem() {
+    public String getNeckItem() {
 	return neckItem;
     }
 
-    public void setNeckItem(Items neckItem) {
+    public void setNeckItem(String neckItem) {
 	this.neckItem = neckItem;
     }
 
-    public Items getFirstTingItem() {
-	return firstTingItem;
+    public String getFirstRingItem() {
+	return firstRingItem;
     }
 
-    public void setFirstTingItem(Items firstTingItem) {
-	this.firstTingItem = firstTingItem;
+    public void setFirstTingItem(String firstTingItem) {
+	this.firstRingItem = firstTingItem;
     }
 
-    public Items getSecondRingItem() {
+    public String getSecondRingItem() {
 	return secondRingItem;
     }
 
-    public void setSecondRingItem(Items secondRingItem) {
+    public void setSecondRingItem(String secondRingItem) {
 	this.secondRingItem = secondRingItem;
     }
 
-    public Items getFirstTrinketItem() {
+    public String getFirstTrinketItem() {
 	return firstTrinketItem;
     }
 
-    public void setFirstTrinketItem(Items firstTrinketItem) {
+    public void setFirstTrinketItem(String firstTrinketItem) {
 	this.firstTrinketItem = firstTrinketItem;
     }
 
-    public Items getSecondTrinketItem() {
+    public String getSecondTrinketItem() {
 	return secondTrinketItem;
     }
 
-    public void setSecondTrinketItem(Items secondTrinketItem) {
+    public void setSecondTrinketItem(String secondTrinketItem) {
 	this.secondTrinketItem = secondTrinketItem;
     }
 
-    public Items getMainHandItem() {
+    public String getMainHandItem() {
 	return mainHandItem;
     }
 
-    public void setMainHandItem(Items mainHandItem) {
+    public void setMainHandItem(String mainHandItem) {
 	this.mainHandItem = mainHandItem;
     }
 
-    public Items getOffHandItem() {
+    public String getOffHandItem() {
 	return offHandItem;
     }
 
-    public void setOffHandItem(Items offHandItem) {
+    public void setOffHandItem(String offHandItem) {
 	this.offHandItem = offHandItem;
     }
 
-    public Items getRelicItem() {
+    public String getRelicItem() {
 	return relicItem;
     }
 
-    public void setRelicItem(Items relicItem) {
+    public void setRelicItem(String relicItem) {
 	this.relicItem = relicItem;
     }
 

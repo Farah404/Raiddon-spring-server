@@ -2,6 +2,7 @@ package fr.isika.al17.raiddonspringserver.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
@@ -10,7 +11,7 @@ import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
 public class Preferences {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long raidsPerWeek;
 

@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
 import fr.isika.al17.raiddonspringserver.enumerationClasses.RaidDifficulty;
@@ -12,31 +13,38 @@ import fr.isika.al17.raiddonspringserver.enumerationClasses.RaidName;
 
 @Entity
 public class Raid {
-    
+
     @Id
     @GeneratedValue
     private Long id;
-    
+
     private RaidName raidName;
-    
+
     private String raidZone;
-    
+
     private Integer raidTotalEncounters;
-    
+
     private Date raidPullTimeDate;
-    
+
     private Date raidOffTimeDate;
-    
+
     private RaidDifficulty raidDifficulty;
-    
+
     private LootSystems raidLootSystem;
+
+    @OneToOne
+    private RaidRequirements raidRequirements;
+
+    @OneToOne
+    private User raidLeader;
 
     public Raid() {
 	super();
     }
 
     public Raid(Long id, RaidName raidName, String raidZone, Integer raidTotalEncounters, Date raidPullTimeDate,
-	    Date raidOffTimeDate, RaidDifficulty raidDifficulty, LootSystems raidLootSystem) {
+	    Date raidOffTimeDate, RaidDifficulty raidDifficulty, LootSystems raidLootSystem,
+	    RaidRequirements raidRequirements, User raidLeader) {
 	super();
 	this.id = id;
 	this.raidName = raidName;
@@ -46,70 +54,88 @@ public class Raid {
 	this.raidOffTimeDate = raidOffTimeDate;
 	this.raidDifficulty = raidDifficulty;
 	this.raidLootSystem = raidLootSystem;
+	this.raidRequirements = raidRequirements;
+	this.raidLeader = raidLeader;
     }
 
     public Long getId() {
-        return id;
+	return id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+	this.id = id;
     }
 
     public RaidName getRaidName() {
-        return raidName;
+	return raidName;
     }
 
     public void setRaidName(RaidName raidName) {
-        this.raidName = raidName;
+	this.raidName = raidName;
     }
 
     public String getRaidZone() {
-        return raidZone;
+	return raidZone;
     }
 
     public void setRaidZone(String raidZone) {
-        this.raidZone = raidZone;
+	this.raidZone = raidZone;
     }
 
     public Integer getRaidTotalEncounters() {
-        return raidTotalEncounters;
+	return raidTotalEncounters;
     }
 
     public void setRaidTotalEncounters(Integer raidTotalEncounters) {
-        this.raidTotalEncounters = raidTotalEncounters;
+	this.raidTotalEncounters = raidTotalEncounters;
     }
 
     public Date getRaidPullTimeDate() {
-        return raidPullTimeDate;
+	return raidPullTimeDate;
     }
 
     public void setRaidPullTimeDate(Date raidPullTimeDate) {
-        this.raidPullTimeDate = raidPullTimeDate;
+	this.raidPullTimeDate = raidPullTimeDate;
     }
 
     public Date getRaidOffTimeDate() {
-        return raidOffTimeDate;
+	return raidOffTimeDate;
     }
 
     public void setRaidOffTimeDate(Date raidOffTimeDate) {
-        this.raidOffTimeDate = raidOffTimeDate;
+	this.raidOffTimeDate = raidOffTimeDate;
     }
 
     public RaidDifficulty getRaidDifficulty() {
-        return raidDifficulty;
+	return raidDifficulty;
     }
 
     public void setRaidDifficulty(RaidDifficulty raidDifficulty) {
-        this.raidDifficulty = raidDifficulty;
+	this.raidDifficulty = raidDifficulty;
     }
 
     public LootSystems getRaidLootSystem() {
-        return raidLootSystem;
+	return raidLootSystem;
     }
 
     public void setRaidLootSystem(LootSystems raidLootSystem) {
-        this.raidLootSystem = raidLootSystem;
+	this.raidLootSystem = raidLootSystem;
     }
-    
+
+    public RaidRequirements getRaidRequirements() {
+	return raidRequirements;
+    }
+
+    public void setRaidRequirements(RaidRequirements raidRequirements) {
+	this.raidRequirements = raidRequirements;
+    }
+
+    public User getRaidLeader() {
+	return raidLeader;
+    }
+
+    public void setRaidLeader(User raidLeader) {
+	this.raidLeader = raidLeader;
+    }
+
 }

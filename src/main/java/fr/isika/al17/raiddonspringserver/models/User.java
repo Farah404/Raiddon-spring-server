@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,9 +29,6 @@ public class User {
 
     private String profilePicture;
 
-    @OneToMany
-    private Set<PlayableCharacter> playableCharacters;
-
     @ManyToMany(fetch = FetchType.LAZY)
     private Set<Role> roles = new HashSet<>();
 
@@ -46,7 +42,7 @@ public class User {
     }
 
     public User(Long id, String username, String email, String password, String battleTag, String profilePicture,
-	    Set<PlayableCharacter> playableCharacters, Set<Role> roles) {
+	     Set<Role> roles) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -54,7 +50,6 @@ public class User {
 	this.password = password;
 	this.battleTag = battleTag;
 	this.profilePicture = profilePicture;
-	this.playableCharacters = playableCharacters;
 	this.roles = roles;
     }
 
@@ -104,14 +99,6 @@ public class User {
 
     public void setProfilePicture(String profilePicture) {
 	this.profilePicture = profilePicture;
-    }
-
-    public Set<PlayableCharacter> getPlayableCharacters() {
-	return playableCharacters;
-    }
-
-    public void setPlayableCharacters(Set<PlayableCharacter> playableCharacters) {
-	this.playableCharacters = playableCharacters;
     }
 
     public Set<Role> getRoles() {

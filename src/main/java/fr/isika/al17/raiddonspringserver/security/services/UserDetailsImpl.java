@@ -24,19 +24,29 @@ public class UserDetailsImpl implements UserDetails {
 
   @JsonIgnore
   private String password;
+  
+  private String battleTag;
+
+  private String profilePicture;
+  
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String username, String email, String password,
-      Collection<? extends GrantedAuthority> authorities) {
+
+
+  public UserDetailsImpl(Long id, String username, String email, String password, String battleTag, String profilePicture,
+	Collection<? extends GrantedAuthority> authorities) {
+    super();
     this.id = id;
     this.username = username;
     this.email = email;
     this.password = password;
+    this.battleTag = battleTag;
+    this.profilePicture = profilePicture;
     this.authorities = authorities;
-  }
+}
 
-  public static UserDetailsImpl build(User user) {
+public static UserDetailsImpl build(User user) {
     List<GrantedAuthority> authorities = user.getRoles().stream()
         .map(role -> new SimpleGrantedAuthority(role.getName().name()))
         .collect(Collectors.toList());
@@ -45,7 +55,9 @@ public class UserDetailsImpl implements UserDetails {
         user.getId(), 
         user.getUsername(), 
         user.getEmail(),
-        user.getPassword(), 
+        user.getPassword(),
+        user.getBattleTag(),
+        user.getProfilePicture(),
         authorities);
   }
 
@@ -56,23 +68,62 @@ public class UserDetailsImpl implements UserDetails {
 
   public Long getId() {
     return id;
-  }
+}
 
-  public String getEmail() {
-    return email;
-  }
+public void setId(Long id) {
+    this.id = id;
+}
 
-  @Override
-  public String getPassword() {
-    return password;
-  }
-
-  @Override
-  public String getUsername() {
+public String getUsername() {
     return username;
-  }
+}
 
-  @Override
+public void setUsername(String username) {
+    this.username = username;
+}
+
+public String getEmail() {
+    return email;
+}
+
+public void setEmail(String email) {
+    this.email = email;
+}
+
+public String getPassword() {
+    return password;
+}
+
+public void setPassword(String password) {
+    this.password = password;
+}
+
+public String getBattleTag() {
+    return battleTag;
+}
+
+public void setBattleTag(String battleTag) {
+    this.battleTag = battleTag;
+}
+
+public String getProfilePicture() {
+    return profilePicture;
+}
+
+public void setProfilePicture(String profilePicture) {
+    this.profilePicture = profilePicture;
+}
+
+
+public static long getSerialversionuid() {
+    return serialVersionUID;
+}
+
+public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
+    this.authorities = authorities;
+}
+
+@Override
   public boolean isAccountNonExpired() {
     return true;
   }

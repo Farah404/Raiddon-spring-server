@@ -79,15 +79,14 @@ public class PlayableCharacterController {
 	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
-    
-    @DeleteMapping("/characters/{id}")
-	public ResponseEntity<HttpStatus> PlayableCharacter(@PathVariable("id") long id) {
-		try {
-		    playableCharacterRepo.deleteById(id);
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
 
+    @DeleteMapping("/characters/{id}")
+    public ResponseEntity<HttpStatus> PlayableCharacter(@PathVariable("id") long id) {
+	try {
+	    playableCharacterRepo.deleteById(id);
+	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	} catch (Exception e) {
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+    }
 }

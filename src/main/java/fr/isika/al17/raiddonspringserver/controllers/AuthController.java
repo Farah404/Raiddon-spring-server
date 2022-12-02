@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.isika.al17.raiddonspringserver.models.ERole;
+import fr.isika.al17.raiddonspringserver.enumerationClasses.ERole;
 import fr.isika.al17.raiddonspringserver.models.Role;
 import fr.isika.al17.raiddonspringserver.models.User;
 import fr.isika.al17.raiddonspringserver.payload.request.LoginRequest;
@@ -34,7 +34,7 @@ import fr.isika.al17.raiddonspringserver.repository.UserRepository;
 import fr.isika.al17.raiddonspringserver.security.jwt.JwtUtils;
 import fr.isika.al17.raiddonspringserver.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -73,7 +73,10 @@ public class AuthController {
         .body(new UserInfoResponse(userDetails.getId(),
                                    userDetails.getUsername(),
                                    userDetails.getEmail(),
-                                   roles));
+                                   roles,
+                                   userDetails.getBattleTag(),
+                                   userDetails.getProfilePicture()));
+                                   
   }
 
   @PostMapping("/signup")
