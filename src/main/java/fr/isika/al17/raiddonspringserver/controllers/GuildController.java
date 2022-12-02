@@ -65,7 +65,7 @@ public class GuildController {
 	    Guild _guild = guildRepo.save(new Guild(guild.getId(), guild.getRank(), guild.getTotalPlayers(),
 		    guild.getRaidsPerWeek(), guild.getGuildName(), guild.getRealm(), guild.getActivities(),
 		    guild.getGuildEmblem(), guild.getWowLogLink(), guild.getSlogan(), guild.getObjectives(),
-		    guild.isRecruiting(), guild.getLootSystems(), guild.getGuildRecruitment()));
+		    guild.isRecruiting(), guild.getLootSystems()));
 	    return new ResponseEntity<>(_guild, HttpStatus.CREATED);
 	} catch (Exception e) {
 	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

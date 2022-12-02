@@ -11,7 +11,7 @@ INSERT INTO users VALUES
 'Hermann#37421',
 'hermann@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://preview.redd.it/fm9iyck48ro21.jpg?auto=webp&s=6c126c25cb92d7e0b71d08c616db8fb694f438c9',
+'https://i.pinimg.com/564x/eb/11/42/eb114219b71d07e8d855a03f990f21fd.jpg',
 'hermann');
 INSERT INTO users VALUES 
 ('3',
@@ -50,7 +50,7 @@ INSERT INTO users VALUES
 'mathew');
 INSERT INTO users VALUES 
 ('8',
-'Ruby#',
+'Ruby#741963',
 'ruby@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
 'https://i.pinimg.com/736x/1d/22/34/1d2234b3a488fe75d415965f9f243cf5--warcraft-art-world-of-warcraft.jpg',
@@ -60,7 +60,7 @@ INSERT INTO users VALUES
 'Nala#159632',
 'nala@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/f2/4e/ef/f24eef2b52adeaa2a548eadf1741ad1d.jpg',
+'https://i.pinimg.com/564x/c4/8e/11/c48e11bf49227f4067a5282159cbf932.jpg',
 'nala');
 INSERT INTO users VALUES 
 ('10',
@@ -88,7 +88,7 @@ INSERT INTO users VALUES
 'Rami#654987',
 'rami@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://cdna.artstation.com/p/assets/images/images/037/989/680/smaller_square/minni_void-unknown.jpg?1621876410',
+'https://i.etsystatic.com/11882103/r/il/adf56e/1209030097/il_570xN.1209030097_ejfh.jpg',
 'rami');
 INSERT INTO users VALUES 
 ('14',
@@ -123,7 +123,7 @@ INSERT INTO users VALUES
 'Safa#654987',
 'safa@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://s1.1zoom.me/big0/591/World_of_WarCraft_Elves_485635.jpg',
+'https://64.media.tumblr.com/5ea80955067fcf123ce0697c9880f5c9/tumblr_psswry7Iq41wt7ek9o1_1280.jpg',
 'safa');
 INSERT INTO users VALUES 
 ('19',
@@ -144,7 +144,7 @@ INSERT INTO users VALUES
 'Caroline#654987',
 'caroline@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://static.wikia.nocookie.net/wowpedia/images/9/93/Jaina_FX.jpg/revision/latest?cb=20151210100327',
+'https://i.pinimg.com/originals/a0/05/7f/a0057f1fe2bc6bd36ec5997e216d9364.jpg',
 'caroline');
 INSERT INTO users VALUES 
 ('22',
@@ -158,42 +158,42 @@ INSERT INTO users VALUES
 'Rola#654987',
 'rola@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://cdnb.artstation.com/p/assets/images/images/030/289/565/large/oxana-che-sadyra.jpg?1600170043',
+'https://i.pinimg.com/736x/ea/2a/85/ea2a85d29fd6a08cf2ff78a452d01946.jpg',
 'rola');
 INSERT INTO users VALUES 
 ('24',
 'David#654987',
 'david@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/originals/01/c9/5e/01c95ef1a4e700c1f3fbfa193e851c1a.png',
+'https://i.pinimg.com/564x/5a/f9/f6/5af9f622dff199933dc46fa7a90dcbf5.jpg',
 'david');
 INSERT INTO users VALUES 
 ('25',
 'Camille#654987',
 'camille@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://cdnb.artstation.com/p/assets/images/images/017/647/641/large/sandra-schnell-warri2k.jpg?1556811697',
+'https://i.pinimg.com/564x/a4/0b/9e/a40b9e020f2f4769ccbdd04b85c3a991.jpg',
 'camille');
 INSERT INTO users VALUES 
 ('26',
 'Anthony#654987',
 'anthony@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/originals/14/9a/7d/149a7d053e9363847e98541e2d494bba.jpg',
+'https://i.pinimg.com/564x/03/3d/b1/033db12322e561268ece658c38d93f06.jpg',
 'anthony');
 INSERT INTO users VALUES 
 ('27',
 'Jonathan#654987',
 'jonathan@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.redd.it/2zdvdfd1ghq41.png',
+'https://i.pinimg.com/564x/b8/b1/c4/b8b1c48a747ae12cf363e709fe3a3c52.jpg',
 'jonathan');
 INSERT INTO users VALUES 
 ('28',
 'Romuald#654987',
 'romuald@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://preview.redd.it/xgt15whzcaw61.jpg?auto=webp&s=76b66bb52216673fa0fc41df4654532a00309ee8',
+'https://i.pinimg.com/736x/00/2c/c9/002cc9bed39efcfc8cc2a2c2a995ffdb.jpg',
 'romuald');
 INSERT INTO users VALUES 
 ('29',
@@ -207,7 +207,7 @@ INSERT INTO users VALUES
 'Sirine#654987',
 'sirine@raiddon.com',
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/26/3d/ed/263dedb466460c3a5c61bfcc50fb002a.jpg',
+'https://i.pinimg.com/736x/2f/8a/aa/2f8aaafe487c2a1477c4ace66d26be3d.jpg',
 'sirine');
 
 --Roles
@@ -349,23 +349,23 @@ INSERT INTO guild VALUES
 'Maze','2','Try Hard','2','1','Auberdine',TRUE,'We are Unbeatable', 
 '79', 'https://classic.warcraftlogs.com/guild/id/516939');
 INSERT INTO guild VALUES
-('3','PVE','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsOyUp8wR9wRqeC2fFDd_3iYtDBmlpmtB6nw&usqp=CAU',
+('3','PVE','https://live.staticflickr.com/760/20225171473_6740130784_b.jpg',
 'NeoLithic','2','Try Hard','2','2','Auberdine',FALSE,'We are immortals', 
 '85', 'https://classic.warcraftlogs.com/guild/id/661821');
 INSERT INTO guild VALUES
-('4','PVE','https://i.imgur.com/cSX4qFt.png',
+('4','PVE','https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/2015/07/33174012.png',
 'Eclipse','1','Chill','4','294','Auberdine',TRUE,'Just play for Fun', 
 '65', 'https://classic.warcraftlogs.com/guild/eu/auberdine/eclipse');
 INSERT INTO guild VALUES
-('5','PVE','https://external-preview.redd.it/WnQOZkasBY-3pB-mlawsKaNkfp6WdrIFl_N4CXJIVPU.png?auto=webp&s=fcd0ec1fef09ad693349ab5173e0c249ddbbafed',
+('5','PVE','https://i.pinimg.com/originals/74/bf/b5/74bfb58eda5128c606fef0eaa3301d1e.jpg',
 'Beef Bar','3','Try Hard','2','294','Gehennas',FALSE,'Legends never die', 
 '164', 'https://classic.warcraftlogs.com/guild/id/519542');
 INSERT INTO guild VALUES
-('6','PVE','https://i.pinimg.com/originals/24/89/56/2489569427bd49939bb2321091c9a9a7.jpg',
+('6','PVE','https://cdna.artstation.com/p/assets/images/images/033/044/052/large/marcelina-borkowska-erzcsnfxkasjzys.jpg?1608221054',
 'Wip n Roll','1','Chill','4','288','Auberdine',TRUE,'Just for Fun', 
 '20', 'https://classic.warcraftlogs.com/guild/id/616761/');
 INSERT INTO guild VALUES
-('7','PVP','https://i.pinimg.com/originals/24/89/56/2489569427bd49939bb2321091c9a9a7.jpg',
+('7','PVP','https://i.pinimg.com/originals/6a/ea/11/6aea1163d6c57d0b3f7adf93cccb1bb0.jpg',
 'Tombenuit','1','Chill','3','223','Auberdine',FALSE,'BANG.BANG.PRO.GANG', 
 '28', 'https://classic.warcraftlogs.com/guild/id/510850/');
 INSERT INTO guild VALUES
@@ -429,36 +429,36 @@ INSERT INTO guild_recruitment VALUES
 'Alchemy','Damage','Elemental','210','80','Shaman','5','Enchanting','Damage','Enhancement','10');
 
 --recruitment_guild
-INSERT INTO guild_guild_recruitment VALUES
-('1','1');
-INSERT INTO guild_guild_recruitment VALUES
-('1','2');
-INSERT INTO guild_guild_recruitment VALUES
-('2','3');
-INSERT INTO guild_guild_recruitment VALUES
-('4','4');
-INSERT INTO guild_guild_recruitment VALUES
-('4','5');
-INSERT INTO guild_guild_recruitment VALUES
-('4','6');
-INSERT INTO guild_guild_recruitment VALUES
-('6','7');
-INSERT INTO guild_guild_recruitment VALUES
-('6','8');
-INSERT INTO guild_guild_recruitment VALUES
-('8','9');
-INSERT INTO guild_guild_recruitment VALUES
-('8','10');
-INSERT INTO guild_guild_recruitment VALUES
-('9','11');
-INSERT INTO guild_guild_recruitment VALUES
-('9','12');
-INSERT INTO guild_guild_recruitment VALUES
-('10','13');
-INSERT INTO guild_guild_recruitment VALUES
-('10','14');
-INSERT INTO guild_guild_recruitment VALUES
-('10','15');
+--INSERT INTO guild_guild_recruitment VALUES
+--('1','1');
+--INSERT INTO guild_guild_recruitment VALUES
+--('1','2');
+--INSERT INTO guild_guild_recruitment VALUES
+--('2','3');
+--INSERT INTO guild_guild_recruitment VALUES
+--('4','4');
+--INSERT INTO guild_guild_recruitment VALUES
+--('4','5');
+--INSERT INTO guild_guild_recruitment VALUES
+--('4','6');
+--INSERT INTO guild_guild_recruitment VALUES
+--('6','7');
+--INSERT INTO guild_guild_recruitment VALUES
+--('6','8');
+--INSERT INTO guild_guild_recruitment VALUES
+--('8','9');
+--INSERT INTO guild_guild_recruitment VALUES
+--('8','10');
+--INSERT INTO guild_guild_recruitment VALUES
+--('9','11');
+--INSERT INTO guild_guild_recruitment VALUES
+--('9','12');
+--INSERT INTO guild_guild_recruitment VALUES
+--('10','13');
+--INSERT INTO guild_guild_recruitment VALUES
+--('10','14');
+--INSERT INTO guild_guild_recruitment VALUES
+--('10','15');
 
 --Equipment
 INSERT INTO equipment VALUES

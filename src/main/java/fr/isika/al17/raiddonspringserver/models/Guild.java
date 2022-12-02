@@ -1,11 +1,8 @@
 package fr.isika.al17.raiddonspringserver.models;
 
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
 
@@ -31,16 +28,13 @@ public class Guild {
 
     private LootSystems lootSystems;
 
-    @OneToMany
-    private Set<GuildRecruitment> guildRecruitment;
-
     public Guild() {
 	super();
     }
 
     public Guild(Long id, Long rank, Long totalPlayers, Long raidsPerWeek, String guildName, String realm,
 	    String activities, String guildEmblem, String wowLogLink, String slogan, String objectives,
-	    boolean recruiting, LootSystems lootSystems, Set<GuildRecruitment> guildRecruitment) {
+	    boolean recruiting, LootSystems lootSystems) {
 	super();
 	this.id = id;
 	this.rank = rank;
@@ -55,7 +49,6 @@ public class Guild {
 	this.objectives = objectives;
 	this.recruiting = recruiting;
 	this.lootSystems = lootSystems;
-	this.guildRecruitment = guildRecruitment;
     }
 
     public Long getId() {
@@ -162,12 +155,5 @@ public class Guild {
 	this.lootSystems = lootSystems;
     }
 
-    public Set<GuildRecruitment> getGuildRecruitment() {
-	return guildRecruitment;
-    }
-
-    public void setGuildRecruitment(Set<GuildRecruitment> guildRecruitment) {
-	this.guildRecruitment = guildRecruitment;
-    }
 
 }
