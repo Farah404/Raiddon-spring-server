@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import fr.isika.al17.raiddonspringserver.models.PlayableCharacter;
 import fr.isika.al17.raiddonspringserver.models.User;
 
 public class UserDetailsImpl implements UserDetails {
@@ -29,13 +30,16 @@ public class UserDetailsImpl implements UserDetails {
 
   private String profilePicture;
   
+  private PlayableCharacter playableCharacter;
 
   private Collection<? extends GrantedAuthority> authorities;
 
 
 
-  public UserDetailsImpl(Long id, String username, String email, String password, String battleTag, String profilePicture,
-	Collection<? extends GrantedAuthority> authorities) {
+
+
+public UserDetailsImpl(Long id, String username, String email, String password, String battleTag, String profilePicture,
+	PlayableCharacter playableCharacter, Collection<? extends GrantedAuthority> authorities) {
     super();
     this.id = id;
     this.username = username;
@@ -43,6 +47,7 @@ public class UserDetailsImpl implements UserDetails {
     this.password = password;
     this.battleTag = battleTag;
     this.profilePicture = profilePicture;
+    this.playableCharacter = playableCharacter;
     this.authorities = authorities;
 }
 
@@ -58,6 +63,7 @@ public static UserDetailsImpl build(User user) {
         user.getPassword(),
         user.getBattleTag(),
         user.getProfilePicture(),
+        user.getPlayableCharacter(),
         authorities);
   }
 
@@ -142,8 +148,17 @@ public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
   public boolean isEnabled() {
     return true;
   }
+  
 
-  @Override
+  public PlayableCharacter getPlayableCharacter() {
+    return playableCharacter;
+}
+
+public void setPlayableCharacter(PlayableCharacter playableCharacter) {
+    this.playableCharacter = playableCharacter;
+}
+
+@Override
   public boolean equals(Object o) {
     if (this == o)
       return true;

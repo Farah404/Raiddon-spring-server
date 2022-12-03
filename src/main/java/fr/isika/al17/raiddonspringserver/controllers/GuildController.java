@@ -48,6 +48,20 @@ public class GuildController {
 	}
     }
 
+    @GetMapping("/guilds/recruiting")
+	public ResponseEntity<List<Guild>> findByRecruiting() {
+	try {
+		List<Guild> guilds = guildRepo.findByRecruiting(true);
+
+		if (guilds.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(guilds, HttpStatus.OK);
+	} catch (Exception e) {
+		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+}
+    
     @GetMapping("/guilds/{id}")
     public ResponseEntity<Guild> getGuildById(@PathVariable("id") long id) {
 	Optional<Guild> guildData = guildRepo.findById(id);

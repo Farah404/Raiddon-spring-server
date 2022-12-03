@@ -72,8 +72,8 @@ public class PlayableCharacterController {
 		    playableCharacter.getFirstProfession(), playableCharacter.getSecondProfession(),
 		    playableCharacter.isHasGuild(), playableCharacter.isCanCook(), playableCharacter.isCanFish(),
 		    playableCharacter.isCanFirstAid(), playableCharacter.getGuildRank(),
-		    playableCharacter.getEquipment(), playableCharacter.getGuild(), playableCharacter.getPreferences(),
-		    playableCharacter.getUser()));
+		    playableCharacter.getEquipment(), playableCharacter.getGuild(), playableCharacter.getPreferences()
+		    ));
 	    return new ResponseEntity<>(_playableCharacter, HttpStatus.CREATED);
 	} catch (Exception e) {
 	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

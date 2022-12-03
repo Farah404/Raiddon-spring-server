@@ -2,6 +2,8 @@ package fr.isika.al17.raiddonspringserver.payload.response;
 
 import java.util.List;
 
+import fr.isika.al17.raiddonspringserver.models.PlayableCharacter;
+
 public class UserInfoResponse {
     private Long id;
     private String username;
@@ -9,13 +11,16 @@ public class UserInfoResponse {
     private List<String> roles;
     private String battleTag;
     private String profilePicture;
+    private PlayableCharacter playableCharacter;
 
     public UserInfoResponse() {
 	super();
     }
 
+
+    
     public UserInfoResponse(Long id, String username, String email, List<String> roles, String battleTag,
-	    String profilePicture) {
+	    String profilePicture, PlayableCharacter playableCharacter) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -23,7 +28,10 @@ public class UserInfoResponse {
 	this.roles = roles;
 	this.battleTag = battleTag;
 	this.profilePicture = profilePicture;
+	this.playableCharacter = playableCharacter;
     }
+
+
 
     public Long getId() {
 	return id;
@@ -72,6 +80,18 @@ public class UserInfoResponse {
     public void setProfilePicture(String profilePicture) {
 	this.profilePicture = profilePicture;
     }
+
+
+
+    public PlayableCharacter getPlayableCharacter() {
+        return playableCharacter;
+    }
+
+    public void setPlayableCharacter(PlayableCharacter playableCharacter) {
+        this.playableCharacter = playableCharacter;
+    }
+    
+    
 
 
 }
