@@ -71,6 +71,7 @@ public class UserController {
 	    _user.setPassword(user.getPassword());
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
+	    _user.setPlayableCharacter(user.getPlayableCharacter());
 	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
 	} else {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);

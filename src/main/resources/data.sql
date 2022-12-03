@@ -1,280 +1,7 @@
---Users
-INSERT INTO users VALUES 
-('1',
-'Farah#21473',
-'farah@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/originals/67/e0/e0/67e0e017079c973b9e2155717d9f8789.jpg',
-'farah');
-INSERT INTO users VALUES 
-('2',
-'Hermann#37421',
-'hermann@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/eb/11/42/eb114219b71d07e8d855a03f990f21fd.jpg',
-'hermann');
-INSERT INTO users VALUES 
-('3',
-'Gaia#5648',
-'gaia@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://preview.redd.it/jatzzrjvik331.jpg?width=637&format=pjpg&auto=webp&s=ad3c9f64072211b1546565bc499dc258b9427020',
-'gaia');
-INSERT INTO users VALUES 
-('4',
-'Valerie#7854',
-'valerie@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://64.media.tumblr.com/91df0cca6e0824560d6f2b669a66b4cd/7ae14143090f045b-24/s1280x1920/dabd506a3e49d6d6e9062e7ab20742246f1f0ece.jpg',
-'valerie');
-INSERT INTO users VALUES 
-('5',
-'Christophe#85241',
-'christophe@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://external-preview.redd.it/qiytGvkXTqPl42BPSCEz0PAWwqSR_znWg80-IoxVyvU.jpg?width=640&crop=smart&auto=webp&s=fbf9281068d2670429c05254bac2cbe80f4650b2',
-'christophe');
-INSERT INTO users VALUES 
-('6',
-'Nolwenn#96541',
-'nolwenn@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://pbs.twimg.com/media/ELs7G1gXYAEY5bl?format=jpg&name=4096x4096',
-'nolwenn');
-INSERT INTO users VALUES 
-('7',
-'Mathew#951753',
-'mathew@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/originals/d5/8b/3a/d58b3acafacfd2615825dfb7bf7e0073.jpg',
-'mathew');
-INSERT INTO users VALUES 
-('8',
-'Ruby#741963',
-'ruby@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/1d/22/34/1d2234b3a488fe75d415965f9f243cf5--warcraft-art-world-of-warcraft.jpg',
-'ruby');
-INSERT INTO users VALUES 
-('9',
-'Nala#159632',
-'nala@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/c4/8e/11/c48e11bf49227f4067a5282159cbf932.jpg',
-'nala');
-INSERT INTO users VALUES 
-('10',
-'Helios#852456',
-'helios@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://64.media.tumblr.com/08b0ba35cf2f22f0aba7b37896b6ecb6/tumblr_priqo8naRb1wt7ek9o1_1280.jpg',
-'helios');
-INSERT INTO users VALUES 
-('11',
-'Rose#654987',
-'rose@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://images.nightcafe.studio/jobs/vNigshShKCGbeBISwyfI/vNigshShKCGbeBISwyfI--1--nfms0.jpg?tr=w-1600,c-at_max',
-'rose');
-INSERT INTO users VALUES 
-('12',
-'Dima#654987',
-'dima@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://pbs.twimg.com/media/EXb7SJvX0AE1rer.jpg',
-'dima');
-INSERT INTO users VALUES 
-('13',
-'Rami#654987',
-'rami@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.etsystatic.com/11882103/r/il/adf56e/1209030097/il_570xN.1209030097_ejfh.jpg',
-'rami');
-INSERT INTO users VALUES 
-('14',
-'Natacha#654987',
-'natacha@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.redd.it/w3j4l11py3h21.png',
-'natacha');
-INSERT INTO users VALUES 
-('15',
-'Vincent#654987',
-'vincent@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://cs14.pikabu.ru/post_img/2022/01/15/8/1642253455118960042.webp',
-'vincent');
-INSERT INTO users VALUES 
-('16',
-'Patrick#654987',
-'patrick@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/originals/64/52/27/645227ee536c237108217d13d5574574.jpg',
-'patrick');
-INSERT INTO users VALUES 
-('17',
-'Alix#654987',
-'alix@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://pbs.twimg.com/media/Eeg3jZZX0AALHiV.jpg',
-'alix');
-INSERT INTO users VALUES 
-('18',
-'Safa#654987',
-'safa@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://64.media.tumblr.com/5ea80955067fcf123ce0697c9880f5c9/tumblr_psswry7Iq41wt7ek9o1_1280.jpg',
-'safa');
-INSERT INTO users VALUES 
-('19',
-'Maxime#654987',
-'maxime@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://preview.redd.it/2fgb8kgxik331.jpg?width=637&format=pjpg&auto=webp&s=d189c646e23e90e91baf1e417094b8a7d4998e8a',
-'maxime');
-INSERT INTO users VALUES 
-('20',
-'Stephane#654987',
-'stephane@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/f3/d0/69/f3d069b883663d584b723584b468dc52.jpg',
-'stephane');
-INSERT INTO users VALUES 
-('21',
-'Caroline#654987',
-'caroline@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/originals/a0/05/7f/a0057f1fe2bc6bd36ec5997e216d9364.jpg',
-'caroline');
-INSERT INTO users VALUES 
-('22',
-'Pierre#654987',
-'pierre@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://pbs.twimg.com/media/E-giIMoWEAQNvew?format=jpg&name=4096x4096',
-'pierre');
-INSERT INTO users VALUES 
-('23',
-'Rola#654987',
-'rola@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/ea/2a/85/ea2a85d29fd6a08cf2ff78a452d01946.jpg',
-'rola');
-INSERT INTO users VALUES 
-('24',
-'David#654987',
-'david@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/5a/f9/f6/5af9f622dff199933dc46fa7a90dcbf5.jpg',
-'david');
-INSERT INTO users VALUES 
-('25',
-'Camille#654987',
-'camille@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/a4/0b/9e/a40b9e020f2f4769ccbdd04b85c3a991.jpg',
-'camille');
-INSERT INTO users VALUES 
-('26',
-'Anthony#654987',
-'anthony@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/03/3d/b1/033db12322e561268ece658c38d93f06.jpg',
-'anthony');
-INSERT INTO users VALUES 
-('27',
-'Jonathan#654987',
-'jonathan@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/b8/b1/c4/b8b1c48a747ae12cf363e709fe3a3c52.jpg',
-'jonathan');
-INSERT INTO users VALUES 
-('28',
-'Romuald#654987',
-'romuald@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/00/2c/c9/002cc9bed39efcfc8cc2a2c2a995ffdb.jpg',
-'romuald');
-INSERT INTO users VALUES 
-('29',
-'Maryem#654987',
-'maryem@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/564x/2d/c1/62/2dc162d2b6f146edf7ed91f85c899f28.jpg',
-'maryem');
-INSERT INTO users VALUES 
-('30',
-'Sirine#654987',
-'sirine@raiddon.com',
-'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
-'https://i.pinimg.com/736x/2f/8a/aa/2f8aaafe487c2a1477c4ace66d26be3d.jpg',
-'sirine');
 
 --Roles
 INSERT INTO roles VALUES 
 ('1','ROLE_USER'),('2','ROLE_MODERATOR'),('3','ROLE_ADMIN');
-
---User roles
-INSERT INTO users_roles VALUES 
-('1','1');
-INSERT INTO users_roles VALUES 
-('2','1');
-INSERT INTO users_roles VALUES 
-('3','1');
-INSERT INTO users_roles VALUES 
-('4','1');
-INSERT INTO users_roles VALUES 
-('5','1');
-INSERT INTO users_roles VALUES 
-('6','1');
-INSERT INTO users_roles VALUES 
-('7','1');
-INSERT INTO users_roles VALUES 
-('8','1');
-INSERT INTO users_roles VALUES 
-('9','1');
-INSERT INTO users_roles VALUES 
-('10','1');
-INSERT INTO users_roles VALUES 
-('11','1');
-INSERT INTO users_roles VALUES 
-('12','1');
-INSERT INTO users_roles VALUES 
-('13','1');
-INSERT INTO users_roles VALUES 
-('14','1');
-INSERT INTO users_roles VALUES 
-('15','1');
-INSERT INTO users_roles VALUES 
-('16','1');
-INSERT INTO users_roles VALUES 
-('17','1');
-INSERT INTO users_roles VALUES 
-('18','1');
-INSERT INTO users_roles VALUES 
-('19','1');
-INSERT INTO users_roles VALUES 
-('20','1');
-INSERT INTO users_roles VALUES 
-('21','1');
-INSERT INTO users_roles VALUES 
-('22','1');
-INSERT INTO users_roles VALUES 
-('23','1');
-INSERT INTO users_roles VALUES 
-('24','1');
-INSERT INTO users_roles VALUES 
-('25','1');
-INSERT INTO users_roles VALUES 
-('26','1');
-INSERT INTO users_roles VALUES 
-('27','1');
-INSERT INTO users_roles VALUES 
-('28','1');
-INSERT INTO users_roles VALUES 
-('29','1');
-INSERT INTO users_roles VALUES 
-('30','1');
 
 
 --Preferences
@@ -610,17 +337,288 @@ INSERT INTO equipment VALUES
 
 INSERT INTO playable_character VALUES
 --Farah
-('1',TRUE,TRUE,TRUE,'Alliance','Engineering','1',TRUE,'209','80','Healer','Holy','Färäh','Paladin','Human','Auberdine','Alchemy','Damage','Retribution',
-'https://classic.warcraftlogs.com/character/EU/Auberdine/F%C3%A4r%C3%A4h','5','1','3','1');
+('1',TRUE,TRUE,TRUE,'Alliance','Engineering','GUILD_MASTER',TRUE,'209','80','Healer','Holy','Färäh','Paladin','Human','Auberdine','Alchemy','Damage','Retribution',
+'https://classic.warcraftlogs.com/character/EU/Auberdine/F%C3%A4r%C3%A4h','5','1','3');
 
 
 INSERT INTO playable_character VALUES
 --Décapitaine
 ('2',TRUE,TRUE,TRUE,'Alliance','Engineering','1',TRUE,'210','80','Damage','Unholy','Décapitaine','Death Knight','Human','Auberdine','Jewelcrafting','Tank','Blood',
-'https://classic.warcraftlogs.com/character/EU/Auberdine/F%C3%A4r%C3%A4h','10','1','2','2');
+'https://classic.warcraftlogs.com/character/EU/Auberdine/F%C3%A4r%C3%A4h','10','1','2');
 
+--Users
+INSERT INTO users VALUES 
+('1',
+'Farah#21473',
+'farah@raiddon.com',
+'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+'https://i.pinimg.com/originals/67/e0/e0/67e0e017079c973b9e2155717d9f8789.jpg',
+'farah','1');
+INSERT INTO users VALUES 
+('2',
+'Hermann#37421',
+'hermann@raiddon.com',
+'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+'https://i.pinimg.com/564x/eb/11/42/eb114219b71d07e8d855a03f990f21fd.jpg',
+'hermann','2');
+--INSERT INTO users VALUES 
+--('3',
+--'Gaia#5648',
+--'gaia@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://preview.redd.it/jatzzrjvik331.jpg?width=637&format=pjpg&auto=webp&s=ad3c9f64072211b1546565bc499dc258b9427020',
+--'gaia','3');
+--INSERT INTO users VALUES 
+--('4',
+--'Valerie#7854',
+--'valerie@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://64.media.tumblr.com/91df0cca6e0824560d6f2b669a66b4cd/7ae14143090f045b-24/s1280x1920/dabd506a3e49d6d6e9062e7ab20742246f1f0ece.jpg',
+--'valerie','4');
+--INSERT INTO users VALUES 
+--('5',
+--'Christophe#85241',
+--'christophe@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://external-preview.redd.it/qiytGvkXTqPl42BPSCEz0PAWwqSR_znWg80-IoxVyvU.jpg?width=640&crop=smart&auto=webp&s=fbf9281068d2670429c05254bac2cbe80f4650b2',
+--'christophe','5');
+--INSERT INTO users VALUES 
+--('6',
+--'Nolwenn#96541',
+--'nolwenn@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://pbs.twimg.com/media/ELs7G1gXYAEY5bl?format=jpg&name=4096x4096',
+--'nolwenn','5');
+--INSERT INTO users VALUES 
+--('7',
+--'Mathew#951753',
+--'mathew@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/originals/d5/8b/3a/d58b3acafacfd2615825dfb7bf7e0073.jpg',
+--'mathew','6');
+--INSERT INTO users VALUES 
+--('8',
+--'Ruby#741963',
+--'ruby@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/736x/1d/22/34/1d2234b3a488fe75d415965f9f243cf5--warcraft-art-world-of-warcraft.jpg',
+--'ruby','7');
+--INSERT INTO users VALUES 
+--('9',
+--'Nala#159632',
+--'nala@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/564x/c4/8e/11/c48e11bf49227f4067a5282159cbf932.jpg',
+--'nala','8');
+--INSERT INTO users VALUES 
+--('10',
+--'Helios#852456',
+--'helios@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://64.media.tumblr.com/08b0ba35cf2f22f0aba7b37896b6ecb6/tumblr_priqo8naRb1wt7ek9o1_1280.jpg',
+--'helios');
+--INSERT INTO users VALUES 
+--('11',
+--'Rose#654987',
+--'rose@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://images.nightcafe.studio/jobs/vNigshShKCGbeBISwyfI/vNigshShKCGbeBISwyfI--1--nfms0.jpg?tr=w-1600,c-at_max',
+--'rose');
+--INSERT INTO users VALUES 
+--('12',
+--'Dima#654987',
+--'dima@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://pbs.twimg.com/media/EXb7SJvX0AE1rer.jpg',
+--'dima');
+--INSERT INTO users VALUES 
+--('13',
+--'Rami#654987',
+--'rami@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.etsystatic.com/11882103/r/il/adf56e/1209030097/il_570xN.1209030097_ejfh.jpg',
+--'rami');
+--INSERT INTO users VALUES 
+--('14',
+--'Natacha#654987',
+--'natacha@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.redd.it/w3j4l11py3h21.png',
+--'natacha');
+--INSERT INTO users VALUES 
+--('15',
+--'Vincent#654987',
+--'vincent@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://cs14.pikabu.ru/post_img/2022/01/15/8/1642253455118960042.webp',
+--'vincent');
+--INSERT INTO users VALUES 
+--('16',
+--'Patrick#654987',
+--'patrick@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/originals/64/52/27/645227ee536c237108217d13d5574574.jpg',
+--'patrick');
+--INSERT INTO users VALUES 
+--('17',
+--'Alix#654987',
+--'alix@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://pbs.twimg.com/media/Eeg3jZZX0AALHiV.jpg',
+--'alix');
+--INSERT INTO users VALUES 
+--('18',
+--'Safa#654987',
+--'safa@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://64.media.tumblr.com/5ea80955067fcf123ce0697c9880f5c9/tumblr_psswry7Iq41wt7ek9o1_1280.jpg',
+--'safa');
+--INSERT INTO users VALUES 
+--('19',
+--'Maxime#654987',
+--'maxime@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://preview.redd.it/2fgb8kgxik331.jpg?width=637&format=pjpg&auto=webp&s=d189c646e23e90e91baf1e417094b8a7d4998e8a',
+--'maxime');
+--INSERT INTO users VALUES 
+--('20',
+--'Stephane#654987',
+--'stephane@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/736x/f3/d0/69/f3d069b883663d584b723584b468dc52.jpg',
+--'stephane');
+--INSERT INTO users VALUES 
+--('21',
+--'Caroline#654987',
+--'caroline@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/originals/a0/05/7f/a0057f1fe2bc6bd36ec5997e216d9364.jpg',
+--'caroline');
+--INSERT INTO users VALUES 
+--('22',
+--'Pierre#654987',
+--'pierre@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://pbs.twimg.com/media/E-giIMoWEAQNvew?format=jpg&name=4096x4096',
+--'pierre');
+--INSERT INTO users VALUES 
+--('23',
+--'Rola#654987',
+--'rola@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/736x/ea/2a/85/ea2a85d29fd6a08cf2ff78a452d01946.jpg',
+--'rola');
+--INSERT INTO users VALUES 
+--('24',
+--'David#654987',
+--'david@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/564x/5a/f9/f6/5af9f622dff199933dc46fa7a90dcbf5.jpg',
+--'david');
+--INSERT INTO users VALUES 
+--('25',
+--'Camille#654987',
+--'camille@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/564x/a4/0b/9e/a40b9e020f2f4769ccbdd04b85c3a991.jpg',
+--'camille');
+--INSERT INTO users VALUES 
+--('26',
+--'Anthony#654987',
+--'anthony@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/564x/03/3d/b1/033db12322e561268ece658c38d93f06.jpg',
+--'anthony');
+--INSERT INTO users VALUES 
+--('27',
+--'Jonathan#654987',
+--'jonathan@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/564x/b8/b1/c4/b8b1c48a747ae12cf363e709fe3a3c52.jpg',
+--'jonathan');
+--INSERT INTO users VALUES 
+--('28',
+--'Romuald#654987',
+--'romuald@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/736x/00/2c/c9/002cc9bed39efcfc8cc2a2c2a995ffdb.jpg',
+--'romuald');
+--INSERT INTO users VALUES 
+--('29',
+--'Maryem#654987',
+--'maryem@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/564x/2d/c1/62/2dc162d2b6f146edf7ed91f85c899f28.jpg',
+--'maryem');
+--INSERT INTO users VALUES 
+--('30',
+--'Sirine#654987',
+--'sirine@raiddon.com',
+--'$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
+--'https://i.pinimg.com/736x/2f/8a/aa/2f8aaafe487c2a1477c4ace66d26be3d.jpg',
+--'sirine');
 
-
+--User roles
+INSERT INTO users_roles VALUES 
+('1','1');
+INSERT INTO users_roles VALUES 
+('2','1');
+--INSERT INTO users_roles VALUES 
+--('3','1');
+--INSERT INTO users_roles VALUES 
+--('4','1');
+--INSERT INTO users_roles VALUES 
+--('5','1');
+--INSERT INTO users_roles VALUES 
+--('6','1');
+--INSERT INTO users_roles VALUES 
+--('7','1');
+--INSERT INTO users_roles VALUES 
+--('8','1');
+--INSERT INTO users_roles VALUES 
+--('9','1');
+--INSERT INTO users_roles VALUES 
+--('10','1');
+--INSERT INTO users_roles VALUES 
+--('11','1');
+--INSERT INTO users_roles VALUES 
+--('12','1');
+--INSERT INTO users_roles VALUES 
+--('13','1');
+--INSERT INTO users_roles VALUES 
+--('14','1');
+--INSERT INTO users_roles VALUES 
+--('15','1');
+--INSERT INTO users_roles VALUES 
+--('16','1');
+--INSERT INTO users_roles VALUES 
+--('17','1');
+--INSERT INTO users_roles VALUES 
+--('18','1');
+--INSERT INTO users_roles VALUES 
+--('19','1');
+--INSERT INTO users_roles VALUES 
+--('20','1');
+--INSERT INTO users_roles VALUES 
+--('21','1');
+--INSERT INTO users_roles VALUES 
+--('22','1');
+--INSERT INTO users_roles VALUES 
+--('23','1');
+--INSERT INTO users_roles VALUES 
+--('24','1');
+--INSERT INTO users_roles VALUES 
+--('25','1');
+--INSERT INTO users_roles VALUES 
+--('26','1');
+--INSERT INTO users_roles VALUES 
+--('27','1');
+--INSERT INTO users_roles VALUES 
+--('28','1');
+--INSERT INTO users_roles VALUES 
+--('29','1');
+--INSERT INTO users_roles VALUES 
+--('30','1');
 
 
 

@@ -49,9 +49,6 @@ public class PlayableCharacter {
     @OneToOne
     private Preferences preferences;
 
-    @OneToOne
-    private User user;
-
     public PlayableCharacter() {
 	super();
     }
@@ -60,7 +57,7 @@ public class PlayableCharacter {
 	    String faction, String race, String playableClass, String mainSpec, String secondarySpec, String mainRole,
 	    String secondaryRole, String firstProfession, String secondProfession, boolean hasGuild, boolean canCook,
 	    boolean canFish, boolean canFirstAid, GuildRanks guildRank, Equipment equipment, Guild guild,
-	    Preferences preferences, User user) {
+	    Preferences preferences) {
 	super();
 	this.id = id;
 	this.ilevel = ilevel;
@@ -85,7 +82,6 @@ public class PlayableCharacter {
 	this.equipment = equipment;
 	this.guild = guild;
 	this.preferences = preferences;
-	this.user = user;
     }
 
     public Long getId() {
@@ -270,13 +266,6 @@ public class PlayableCharacter {
 
     public void setPreferences(Preferences preferences) {
 	this.preferences = preferences;
-    }
-    public User getUser() {
-	return user;
-    }
-
-    public void setUser(User user) {
-	this.user = user;
     }
 
 }
