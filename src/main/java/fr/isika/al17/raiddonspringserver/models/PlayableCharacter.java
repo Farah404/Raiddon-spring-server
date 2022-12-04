@@ -1,13 +1,9 @@
 package fr.isika.al17.raiddonspringserver.models;
 
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
-import fr.isika.al17.raiddonspringserver.enumerationClasses.GuildRanks;
 
 @Entity
 public class PlayableCharacter {
@@ -31,15 +27,13 @@ public class PlayableCharacter {
     private String secondaryRole;
     private String firstProfession;
     private String secondProfession;
+    private String guildRank;
 
     private boolean hasGuild;
     private boolean canCook;
     private boolean canFish;
     private boolean canFirstAid;
-
-    @Enumerated(EnumType.STRING)
-    private GuildRanks guildRank;
-
+    
     @OneToOne
     private Equipment equipment;
 
@@ -56,7 +50,7 @@ public class PlayableCharacter {
     public PlayableCharacter(Long id, Long ilevel, Long level, String name, String wowLogLink, String realm,
 	    String faction, String race, String playableClass, String mainSpec, String secondarySpec, String mainRole,
 	    String secondaryRole, String firstProfession, String secondProfession, boolean hasGuild, boolean canCook,
-	    boolean canFish, boolean canFirstAid, GuildRanks guildRank, Equipment equipment, Guild guild,
+	    boolean canFish, boolean canFirstAid, String guildRank, Equipment equipment, Guild guild,
 	    Preferences preferences) {
 	super();
 	this.id = id;
@@ -236,11 +230,11 @@ public class PlayableCharacter {
 	this.canFirstAid = canFirstAid;
     }
 
-    public GuildRanks getGuildRank() {
+    public String getGuildRank() {
 	return guildRank;
     }
 
-    public void setGuildRank(GuildRanks guildRank) {
+    public void setGuildRank(String guildRank) {
 	this.guildRank = guildRank;
     }
 

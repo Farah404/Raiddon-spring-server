@@ -9,5 +9,6 @@ import fr.isika.al17.raiddonspringserver.models.Items;
 public interface ItemsRepository extends JpaRepository<Items, Long> {
     
     List<Items> findByItemName(String itemName);
+    
 
 }

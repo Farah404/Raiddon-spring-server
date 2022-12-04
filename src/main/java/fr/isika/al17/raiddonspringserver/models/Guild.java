@@ -3,8 +3,7 @@ package fr.isika.al17.raiddonspringserver.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
-import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Guild {
@@ -26,7 +25,10 @@ public class Guild {
 
     private boolean recruiting;
 
-    private LootSystems lootSystems;
+    private String lootSystems;
+
+    @OneToOne
+    private GuildRecruitment guildRecruitment;
 
     public Guild() {
 	super();
@@ -34,7 +36,7 @@ public class Guild {
 
     public Guild(Long id, Long rank, Long totalPlayers, Long raidsPerWeek, String guildName, String realm,
 	    String activities, String guildEmblem, String wowLogLink, String slogan, String objectives,
-	    boolean recruiting, LootSystems lootSystems) {
+	    boolean recruiting, String lootSystems, GuildRecruitment guildRecruitment) {
 	super();
 	this.id = id;
 	this.rank = rank;
@@ -49,6 +51,7 @@ public class Guild {
 	this.objectives = objectives;
 	this.recruiting = recruiting;
 	this.lootSystems = lootSystems;
+	this.guildRecruitment = guildRecruitment;
     }
 
     public Long getId() {
@@ -147,13 +150,19 @@ public class Guild {
 	this.recruiting = recruiting;
     }
 
-    public LootSystems getLootSystems() {
+    public String getLootSystems() {
 	return lootSystems;
     }
 
-    public void setLootSystems(LootSystems lootSystems) {
+    public void setLootSystems(String lootSystems) {
 	this.lootSystems = lootSystems;
     }
 
+    public GuildRecruitment getGuildRecruitment() {
+	return guildRecruitment;
+    }
 
+    public void setGuildRecruitment(GuildRecruitment guildRecruitment) {
+	this.guildRecruitment = guildRecruitment;
+    }
 }
