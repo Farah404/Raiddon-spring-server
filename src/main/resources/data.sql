@@ -717,7 +717,127 @@ INSERT INTO users_roles VALUES
 ('28','1');
 
 
+--Raid requirements
+INSERT INTO raid_requirements VALUES 
+('1','Warrior','Tank','Protection','Damage','Arms');
+INSERT INTO raid_requirements VALUES 
+('2','Warrior','Damage','Fury','Tank','Protection');
+INSERT INTO raid_requirements VALUES 
+('3','Warrior','Damage','Arms','Damage','Fury');
+INSERT INTO raid_requirements VALUES 
+('4','Paladin','Healer','Holy','Damage','Retribution');
+INSERT INTO raid_requirements VALUES 
+('5','Paladin','Damage','Retribution','Tank','Protection');
+INSERT INTO raid_requirements VALUES 
+('6','Paladin','Tank','Protection','Healer','Holy');
+INSERT INTO raid_requirements VALUES 
+('7','Shaman','Damage','Elemntal','Damage','Enchancement');
+INSERT INTO raid_requirements VALUES 
+('8','Shaman','Damage','Enchancement','Damage','Elemntal');
+INSERT INTO raid_requirements VALUES 
+('9','Shaman','Healer','Restoration','Healer','Restoration');
+INSERT INTO raid_requirements VALUES 
+('10','Druid','Healer','Restoration','Damage','Balance');
+INSERT INTO raid_requirements VALUES 
+('11','Druid','Damage','Balance','Damage','Balance');
+INSERT INTO raid_requirements VALUES 
+('12','Druid','Damage','Feral','Tank','Protection');
+INSERT INTO raid_requirements VALUES 
+('13','Druid','Tank','Protection','Damage','Feral');
+INSERT INTO raid_requirements VALUES 
+('14','Mage','Damage','Frost','Damage','Fire');
+INSERT INTO raid_requirements VALUES 
+('15','Mage','Damage','Arcane','Damage','Frost');
+INSERT INTO raid_requirements VALUES 
+('16','Mage','Damage','Fire','Damage','Arcane');
+INSERT INTO raid_requirements VALUES 
+('17','Warlock','Damage','Affliction','Damage','Demonology');
+INSERT INTO raid_requirements VALUES 
+('18','Warlock','Damage','Demonology','Damage','Destruction');
+INSERT INTO raid_requirements VALUES 
+('19','Warlock','Damage','Destruction','Damage','Affliction');
+INSERT INTO raid_requirements VALUES 
+('20','Death Knight','Damage','Blood','Damage','Unholy');
+INSERT INTO raid_requirements VALUES 
+('21','Death Knight','Damage','Unholy','Tank','Frost');
+INSERT INTO raid_requirements VALUES 
+('22','Death Knight','Tank','Frost','Damage','Blood');
+INSERT INTO raid_requirements VALUES 
+('23','Hunter','Damage','Survival','Damage','Marksmanship');
+INSERT INTO raid_requirements VALUES 
+('24','Hunter','Damage','Marksmanship','Damage','Beast Mastery');
+INSERT INTO raid_requirements VALUES 
+('25','Hunter','Damage','Beast Mastery','Damage','Survival');
+INSERT INTO raid_requirements VALUES 
+('26','Rogue','Damage','Combat','Damage','Assassination');
+INSERT INTO raid_requirements VALUES 
+('27','Rogue','Damage','Assassination','Damage','Subtlety');
+INSERT INTO raid_requirements VALUES 
+('28','Rogue','Damage','Subtlety','Damage','Combat');
+INSERT INTO raid_requirements VALUES 
+('29','Priest','Damage','Shadow','Healer','Discipline');
+INSERT INTO raid_requirements VALUES 
+('30','Priest','Healer','Holy','Damage','Shadow');
+INSERT INTO raid_requirements VALUES 
+('31','Priest','Healer','Discipline','Damage','Shadow');
 
+--Raids
+INSERT INTO raid VALUES 
+('1','17/01/2023','10 players party','https://i.pinimg.com/564x/d3/4d/46/d34d46a8821698b7c41c4676d3a150d8.jpg','Random','Naxxramas','23:00','21:00','15','Dragonblight','1','1');
+INSERT INTO raid VALUES 
+('2','17/01/2023','25 players party','https://i.pinimg.com/564x/88/ab/f5/88abf58e06d9ea1662f7eaf99879fc43.jpg','Random','Naxxramas','23:00','21:00','15','Dragonblight','2','2');
+INSERT INTO raid VALUES 
+('3','18/01/2023','25 players party','https://i.pinimg.com/564x/41/53/c4/4153c4b04771947612ab31f4dd70293c.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','23:00','21:00','1','Black Dragonflight','3','3');
+INSERT INTO raid VALUES 
+('4','18/01/2023','10 players party','https://i.pinimg.com/564x/a5/cd/5b/a5cd5b826b65395571c990228240c08e.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','23:00','21:00','1','Black Dragonflight','4','4');
+INSERT INTO raid VALUES 
+('5','19/01/2023','10 players party','https://i.pinimg.com/564x/69/bc/50/69bc50996c29d438d241ba2de4abacfe.jpg','Gold Dragon Kill Points','The Eye of Eternity','23:00','21:00','1','Borean Tundra','5','5');
+INSERT INTO raid VALUES 
+('6','19/01/2023','25 players party','https://i.pinimg.com/736x/a0/a4/93/a0a493a866deda27b53c2c1857ab6392.jpg','Gold Dragon Kill Points','The Eye of Eternity','23:00','21:00','1','Borean Tundra','6','6');
+INSERT INTO raid VALUES 
+('7','20/01/2023','10 players party','https://i.pinimg.com/736x/2d/da/88/2dda886bf9f779803b89e171cd184964.jpg','Attribution by Loot master','Naxxramas','15:00','18:00','15','Dragonblight','7','7');
+INSERT INTO raid VALUES 
+('8','20/01/2023','25 players party','https://i.pinimg.com/736x/d9/ba/c1/d9bac14315c9c3c54c9dfb42517af30c.jpg','Attribution by Loot master','Naxxramas','15:00','18:00','15','Dragonblight','8','8');
+INSERT INTO raid VALUES 
+('9','21/01/2023','25 players party','https://i.pinimg.com/736x/3f/a5/8a/3fa58a96a8863c88c3d2636728fc9f14.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','9','9');
+INSERT INTO raid VALUES 
+('10','21/01/2023','10 players party','https://i.pinimg.com/736x/23/44/95/23449540ee87c98d17631ce47f8666cc.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','10','10');
+INSERT INTO raid VALUES 
+('11','25/01/2023','10 players party','https://i.pinimg.com/564x/08/98/02/08980201e99a23d3f31ab9e3e57bd57d.jpg','DKP Dragon Kill Points','The Eye of Eternity','20:00','22:00','1','Borean Tundra','11','11');
+INSERT INTO raid VALUES 
+('12','25/01/2023','25 players party','https://i.pinimg.com/736x/2b/33/76/2b3376bedf0179ecd425df4dc3c723a3.jpg','DKP Dragon Kill Points','The Eye of Eternity','20:00','22:00','1','Borean Tundra','12','12');
+INSERT INTO raid VALUES 
+('13','26/01/2023','10 players party','https://i.pinimg.com/736x/75/d5/41/75d541c6d05fa113990cb9dab52a86ce.jpg','Random','Naxxramas','15:00','18:00','15','Dragonblight','13','13');
+INSERT INTO raid VALUES 
+('14','10/01/2023','25 players party','https://i.pinimg.com/564x/18/7c/06/187c0601d146e1f67ad4c093b44a3062.jpg','Random','Naxxramas','15:00','18:00','15','Dragonblight','14','14');
+INSERT INTO raid VALUES 
+('15','11/01/2023','25 players party','https://i.pinimg.com/564x/5d/68/aa/5d68aa42546825b17f4d4a97f6a171f8.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','15','15');
+INSERT INTO raid VALUES 
+('16','16/01/2023','10 players party','https://i.pinimg.com/564x/6a/bf/46/6abf462d74db6035804a69d8bf0d13a5.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','16','16');
+INSERT INTO raid VALUES 
+('17','07/01/2023','10 players party','https://i.pinimg.com/736x/d4/13/54/d41354e4c4369fa2ef1b02e3ca2bd09b.jpg','DKP Dragon Kill Points','The Eye of Eternity','20:00','22:00','1','Borean Tundra','17','17');
+INSERT INTO raid VALUES 
+('18','28/01/2023','25 players party','https://i.pinimg.com/564x/28/2a/ad/282aadecb08e32e5d7da55707dd883fb.jpg','DKP Dragon Kill Points','The Eye of Eternity','20:00','22:00','1','Borean Tundra','18','18');
+INSERT INTO raid VALUES 
+('19','20/01/2023','10 players party','https://i.pinimg.com/564x/b2/96/ff/b296ffd06256cbae71e6393eced00ae5.jpg','Attribution by Loot master','Naxxramas','15:00','18:00','15','Dragonblight','19','19');
+INSERT INTO raid VALUES 
+('20','21/01/2023','25 players party','https://i.pinimg.com/564x/c2/35/1c/c2351c8bea6fdc73418aa7ae17171c13.jpg','Attribution by Loot master','Naxxramas','15:00','18:00','15','Dragonblight','20','20');
+INSERT INTO raid VALUES 
+('21','22/01/2023','25 players party','https://i.pinimg.com/564x/ba/ff/0b/baff0bfec3fa4ca1430c2dd79a9de6e2.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','21','21');
+INSERT INTO raid VALUES 
+('22','21/01/2023','10 players party','https://i.pinimg.com/564x/8d/68/a2/8d68a23a47b5f62775c9efe862ddef84.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','22','22');
+INSERT INTO raid VALUES 
+('23','22/01/2023','10 players party','https://i.pinimg.com/564x/dc/66/d2/dc66d2ed5b301a0491c8e8bc07d46cf3.jpg','DKP Dragon Kill Points','The Eye of Eternity','20:00','22:00','1','Borean Tundra','23','23');
+INSERT INTO raid VALUES 
+('24','23/01/2023','25 players party','https://i.pinimg.com/564x/58/ab/fd/58abfdd704d834c5c9b417bf54991eb5.jpg','DKP Dragon Kill Points','The Eye of Eternity','20:00','22:00','1','Borean Tundra','24','24');
+INSERT INTO raid VALUES 
+('25','14/01/2023','10 players party','https://i.pinimg.com/564x/0a/dd/7c/0add7c3cfc325caaf6244b34f65a6a57.jpg','Random','Naxxramas','15:00','18:00','15','Dragonblight','25','25');
+INSERT INTO raid VALUES 
+('26','14/01/2023','25 players party','https://i.pinimg.com/736x/88/bd/c1/88bdc154d6098a9ed5d589d0f699981d.jpg','Random','Naxxramas','15:00','18:00','15','Dragonblight','26','26');
+INSERT INTO raid VALUES 
+('27','15/01/2023','25 players party','https://i.pinimg.com/736x/ed/c8/8f/edc88f205260f34455e7b48395e665c0.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','27','27');
+INSERT INTO raid VALUES 
+('28','13/01/2023','10 players party','https://i.pinimg.com/564x/ff/ec/d2/ffecd2694db3e33435d721b97aac355a.jpg','Gold Dragon Kill Points','The Obsidian Sanctum','18:00','20:00','1','Black Dragonflight','28','28');
 
 
 

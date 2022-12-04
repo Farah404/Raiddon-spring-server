@@ -12,7 +12,6 @@ public class RaidRequirements {
     private Long id;
 
     private String mainClass;
-    private String secondaryClass;
     private String mainSpec;
     private String secondarySpec;
     private String mainRole;
@@ -22,12 +21,11 @@ public class RaidRequirements {
 	super();
     }
 
-    public RaidRequirements(Long id, String mainClass, String secondaryClass, String mainSpec, String secondarySpec,
+    public RaidRequirements(Long id, String mainClass, String mainSpec, String secondarySpec,
 	    String mainRole, String secondaryRole) {
 	super();
 	this.id = id;
 	this.mainClass = mainClass;
-	this.secondaryClass = secondaryClass;
 	this.mainSpec = mainSpec;
 	this.secondarySpec = secondarySpec;
 	this.mainRole = mainRole;
@@ -48,14 +46,6 @@ public class RaidRequirements {
 
     public void setMainClass(String mainClass) {
 	this.mainClass = mainClass;
-    }
-
-    public String getSecondaryClass() {
-	return secondaryClass;
-    }
-
-    public void setSecondaryClass(String secondaryClass) {
-	this.secondaryClass = secondaryClass;
     }
 
     public String getMainSpec() {

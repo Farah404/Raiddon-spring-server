@@ -68,12 +68,14 @@ public class RaidController {
 		    raid.getRaidName(),
 		    raid.getRaidZone(),
 		    raid.getRaidTotalEncounters(),
-		    raid.getRaidPullTimeDate(),
-		    raid.getRaidOffTimeDate(),
+		    raid.getRaidDate(),
+		    raid.getRaidPullTime(),
+		    raid.getRaidOffTime(),
 		    raid.getRaidDifficulty(),
 		    raid.getRaidLootSystem(),
 		    raid.getRaidRequirements(),
-		    raid.getRaidLeader()
+		    raid.getRaidLeader(),
+		    raid.getRaidIcon()
 		    ));
 	    return new ResponseEntity<>(_raid, HttpStatus.CREATED);
 	} catch (Exception e) {
