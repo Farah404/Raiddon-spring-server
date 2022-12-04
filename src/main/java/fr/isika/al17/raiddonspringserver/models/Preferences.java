@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
-
 @Entity
 public class Preferences {
 
@@ -20,15 +18,14 @@ public class Preferences {
 
     private String description;
     private String objectives;
-
-    private LootSystems lootSystems;
+    private String lootSystems;
 
     public Preferences() {
 	super();
     }
 
     public Preferences(Long id, Long raidsPerWeek, boolean seekingGuild, boolean seekingRaid, String description,
-	    String objectives, LootSystems lootSystems) {
+	    String objectives, String lootSystems) {
 	super();
 	this.id = id;
 	this.raidsPerWeek = raidsPerWeek;
@@ -87,11 +84,11 @@ public class Preferences {
 	this.objectives = objectives;
     }
 
-    public LootSystems getLootSystems() {
+    public String getLootSystems() {
 	return lootSystems;
     }
 
-    public void setLootSystems(LootSystems lootSystems) {
+    public void setLootSystems(String lootSystems) {
 	this.lootSystems = lootSystems;
     }
 

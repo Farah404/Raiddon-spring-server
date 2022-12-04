@@ -7,10 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
-import fr.isika.al17.raiddonspringserver.enumerationClasses.LootSystems;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.RaidDifficulty;
-import fr.isika.al17.raiddonspringserver.enumerationClasses.RaidName;
-
 @Entity
 public class Raid {
 
@@ -18,7 +14,7 @@ public class Raid {
     @GeneratedValue
     private Long id;
 
-    private RaidName raidName;
+    private String raidName;
 
     private String raidZone;
 
@@ -28,9 +24,9 @@ public class Raid {
 
     private Date raidOffTimeDate;
 
-    private RaidDifficulty raidDifficulty;
+    private String raidDifficulty;
 
-    private LootSystems raidLootSystem;
+    private String raidLootSystem;
 
     @OneToOne
     private RaidRequirements raidRequirements;
@@ -42,8 +38,8 @@ public class Raid {
 	super();
     }
 
-    public Raid(Long id, RaidName raidName, String raidZone, Integer raidTotalEncounters, Date raidPullTimeDate,
-	    Date raidOffTimeDate, RaidDifficulty raidDifficulty, LootSystems raidLootSystem,
+    public Raid(Long id, String raidName, String raidZone, Integer raidTotalEncounters, Date raidPullTimeDate,
+	    Date raidOffTimeDate, String raidDifficulty, String raidLootSystem,
 	    RaidRequirements raidRequirements, User raidLeader) {
 	super();
 	this.id = id;
@@ -66,11 +62,11 @@ public class Raid {
 	this.id = id;
     }
 
-    public RaidName getRaidName() {
+    public String getRaidName() {
 	return raidName;
     }
 
-    public void setRaidName(RaidName raidName) {
+    public void setRaidName(String raidName) {
 	this.raidName = raidName;
     }
 
@@ -106,19 +102,19 @@ public class Raid {
 	this.raidOffTimeDate = raidOffTimeDate;
     }
 
-    public RaidDifficulty getRaidDifficulty() {
+    public String getRaidDifficulty() {
 	return raidDifficulty;
     }
 
-    public void setRaidDifficulty(RaidDifficulty raidDifficulty) {
+    public void setRaidDifficulty(String raidDifficulty) {
 	this.raidDifficulty = raidDifficulty;
     }
 
-    public LootSystems getRaidLootSystem() {
+    public String getRaidLootSystem() {
 	return raidLootSystem;
     }
 
-    public void setRaidLootSystem(LootSystems raidLootSystem) {
+    public void setRaidLootSystem(String raidLootSystem) {
 	this.raidLootSystem = raidLootSystem;
     }
 

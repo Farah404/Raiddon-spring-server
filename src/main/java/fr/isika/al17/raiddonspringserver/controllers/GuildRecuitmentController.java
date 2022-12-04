@@ -78,8 +78,7 @@ public class GuildRecuitmentController {
 		    guildRecruitment.getSecondProfession(),
 		    guildRecruitment.isCanCook(),
 		    guildRecruitment.isCanFish(),
-		    guildRecruitment.isCanFirstAid(),
-		    guildRecruitment.getGuild()
+		    guildRecruitment.isCanFirstAid()
 		    ));
 	    return new ResponseEntity<>(_guildRecruitment, HttpStatus.CREATED);
 	} catch (Exception e) {

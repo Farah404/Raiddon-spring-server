@@ -3,7 +3,6 @@ package fr.isika.al17.raiddonspringserver.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 
 @Entity
 public class GuildRecruitment {
@@ -28,9 +27,6 @@ public class GuildRecruitment {
     private boolean canFish;
     private boolean canFirstAid;
 
-    @ManyToOne
-    private Guild guild;
-
     public GuildRecruitment() {
 	super();
     }
@@ -38,7 +34,7 @@ public class GuildRecruitment {
     public GuildRecruitment(Long id, Long minIlevel, Long minLevel, String playableCharacter, String quantity,
 	    String bulk, String description, String mainSpec, String secondarySpec, String mainRole,
 	    String secondaryRole, String firstProfession, String secondProfession, boolean canCook, boolean canFish,
-	    boolean canFirstAid, Guild guild) {
+	    boolean canFirstAid) {
 	super();
 	this.id = id;
 	this.minIlevel = minIlevel;
@@ -56,7 +52,6 @@ public class GuildRecruitment {
 	this.canCook = canCook;
 	this.canFish = canFish;
 	this.canFirstAid = canFirstAid;
-	this.guild = guild;
     }
 
     public Long getId() {
@@ -185,14 +180,6 @@ public class GuildRecruitment {
 
     public void setCanFirstAid(boolean canFirstAid) {
 	this.canFirstAid = canFirstAid;
-    }
-
-    public Guild getGuild() {
-	return guild;
-    }
-
-    public void setGuild(Guild guild) {
-	this.guild = guild;
     }
 
 }
