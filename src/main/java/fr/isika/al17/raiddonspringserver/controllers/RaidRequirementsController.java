@@ -64,7 +64,7 @@ public class RaidRequirementsController {
     public ResponseEntity<RaidRequirements> RaidRequirements(@RequestBody RaidRequirements raidRequirements) {
 	try {
 	    RaidRequirements _raidRequirements = raidRequirementsRepo.save(new RaidRequirements(
-		    raidRequirements.getId(), raidRequirements.getMainClass(), raidRequirements.getSecondaryClass(),
+		    raidRequirements.getId(), raidRequirements.getMainClass(),
 		    raidRequirements.getMainSpec(), raidRequirements.getSecondarySpec(), raidRequirements.getMainRole(),
 		    raidRequirements.getSecondaryRole()));
 	    return new ResponseEntity<>(_raidRequirements, HttpStatus.CREATED);
