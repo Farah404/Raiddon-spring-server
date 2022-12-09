@@ -71,7 +71,7 @@ public class AuthController {
 	return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString())
 		.body(new UserInfoResponse(userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(),
 			roles, userDetails.getBattleTag(), userDetails.getProfilePicture(),
-			userDetails.getPlayableCharacter()));
+			userDetails.getPlayableCharacter(), userDetails.getGuildRank()));
 
     }
 

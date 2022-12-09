@@ -12,15 +12,14 @@ public class UserInfoResponse {
     private String battleTag;
     private String profilePicture;
     private PlayableCharacter playableCharacter;
+    private String guildRank;
 
     public UserInfoResponse() {
 	super();
     }
 
-
-    
     public UserInfoResponse(Long id, String username, String email, List<String> roles, String battleTag,
-	    String profilePicture, PlayableCharacter playableCharacter) {
+	    String profilePicture, PlayableCharacter playableCharacter, String guildRank) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -29,9 +28,8 @@ public class UserInfoResponse {
 	this.battleTag = battleTag;
 	this.profilePicture = profilePicture;
 	this.playableCharacter = playableCharacter;
+	this.guildRank = guildRank;
     }
-
-
 
     public Long getId() {
 	return id;
@@ -81,17 +79,20 @@ public class UserInfoResponse {
 	this.profilePicture = profilePicture;
     }
 
-
-
     public PlayableCharacter getPlayableCharacter() {
-        return playableCharacter;
+	return playableCharacter;
     }
 
     public void setPlayableCharacter(PlayableCharacter playableCharacter) {
-        this.playableCharacter = playableCharacter;
+	this.playableCharacter = playableCharacter;
     }
-    
-    
 
+    public String getGuildRank() {
+	return guildRank;
+    }
+
+    public void setGuildRank(String guildRank) {
+	this.guildRank = guildRank;
+    }
 
 }

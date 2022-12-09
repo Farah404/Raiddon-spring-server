@@ -26,6 +26,8 @@ public class Guild {
     private boolean recruiting;
 
     private String lootSystems;
+    
+    private String guildMaster;
 
     @OneToOne
     private GuildRecruitment guildRecruitment;
@@ -36,7 +38,7 @@ public class Guild {
 
     public Guild(Long id, Long rank, Long totalPlayers, Long raidsPerWeek, String guildName, String realm,
 	    String activities, String guildEmblem, String wowLogLink, String slogan, String objectives,
-	    boolean recruiting, String lootSystems, GuildRecruitment guildRecruitment) {
+	    boolean recruiting, String lootSystems, GuildRecruitment guildRecruitment, String guildMaster) {
 	super();
 	this.id = id;
 	this.rank = rank;
@@ -52,6 +54,7 @@ public class Guild {
 	this.recruiting = recruiting;
 	this.lootSystems = lootSystems;
 	this.guildRecruitment = guildRecruitment;
+	this.guildMaster = guildMaster;
     }
 
     public Long getId() {
@@ -165,4 +168,13 @@ public class Guild {
     public void setGuildRecruitment(GuildRecruitment guildRecruitment) {
 	this.guildRecruitment = guildRecruitment;
     }
+
+    public String getGuildMaster() {
+        return guildMaster;
+    }
+
+    public void setGuildMaster(String guildMaster) {
+        this.guildMaster = guildMaster;
+    }
+    
 }

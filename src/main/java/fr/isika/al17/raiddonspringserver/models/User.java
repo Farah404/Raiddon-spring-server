@@ -29,6 +29,8 @@ public class User {
     private String battleTag;
 
     private String profilePicture;
+    
+    private String guildRank;
 
     @OneToOne
     private PlayableCharacter playableCharacter;
@@ -46,7 +48,7 @@ public class User {
     }
 
     public User(Long id, String username, String email, String password, String battleTag, String profilePicture,
-	    PlayableCharacter playableCharacter, Set<Role> roles) {
+	    PlayableCharacter playableCharacter, Set<Role> roles, String guildRank) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -56,6 +58,7 @@ public class User {
 	this.profilePicture = profilePicture;
 	this.playableCharacter = playableCharacter;
 	this.roles = roles;
+	this.guildRank = guildRank;
     }
 
     public Long getId() {
@@ -121,5 +124,14 @@ public class User {
     public void setRoles(Set<Role> roles) {
 	this.roles = roles;
     }
+
+    public String getGuildRank() {
+        return guildRank;
+    }
+
+    public void setGuildRank(String guildRank) {
+        this.guildRank = guildRank;
+    }
+    
 
 }
