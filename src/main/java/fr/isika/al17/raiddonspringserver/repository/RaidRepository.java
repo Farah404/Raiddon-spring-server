@@ -9,5 +9,6 @@ import fr.isika.al17.raiddonspringserver.models.Raid;
 public interface RaidRepository extends JpaRepository<Raid, Long> {
     
     List<Raid> findByRaidZone(String raidZone);
+    List<Raid> findByRaidName(String raidName);
 
 }

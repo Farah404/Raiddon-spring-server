@@ -1,0 +1,26 @@
+server.port=
+spring.jpa.hibernate.ddl-auto=
+spring.jpa.show-sql=
+spring.jpa.properties.hibernate.globally_quoted_identifiers=
+
+# MySQL HEROKU
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.jpa.defer-datasource-initialization=
+spring.sql.init.mode=
+
+# MySQL local
+#spring.datasource.url=
+#spring.datasource.username=
+#spring.datasource.password=
+#spring.jpa.defer-datasource-initialization=
+#spring.sql.init.mode=
+
+# App Properties
+raiddon.app.jwtCookieName= 
+raiddon.app.jwtSecret= 
+raiddon.app.jwtExpirationMs= 
+
+spring.servlet.multipart.max-file-size=
+spring.servlet.multipart.max-request-size=

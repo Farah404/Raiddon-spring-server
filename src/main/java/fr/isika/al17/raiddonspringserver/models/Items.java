@@ -32,10 +32,6 @@ public class Items {
     private Long spellPower;
     private Long attackPower;
     private Long defense;
-    private Long blockValue;
-    private Long parryValue;
-    private Long expertise;
-    private Long manaPerFiveSeconds;
 
     public Items() {
 	super();
@@ -44,8 +40,7 @@ public class Items {
     public Items(Long id, String itemName, Long itemLevel, String itemIcon, String itemSlot, String itemArmorType,
 	    String itemSource, String itemDropZone, String itemPriorityClass, String itemPrioritySpec, Long armor,
 	    Long agility, Long stamina, Long intellect, Long strength, Long spirit, Long hitRating, Long hasterating,
-	    Long criticalStrike, Long spellPower, Long attackPower, Long defense, Long blockValue, Long parryValue,
-	    Long expertise, Long manaPerFiveSeconds) {
+	    Long criticalStrike, Long spellPower, Long attackPower, Long defense) {
 	super();
 	this.id = id;
 	this.itemName = itemName;
@@ -69,10 +64,6 @@ public class Items {
 	this.spellPower = spellPower;
 	this.attackPower = attackPower;
 	this.defense = defense;
-	this.blockValue = blockValue;
-	this.parryValue = parryValue;
-	this.expertise = expertise;
-	this.manaPerFiveSeconds = manaPerFiveSeconds;
     }
 
     public Long getId() {
@@ -249,38 +240,6 @@ public class Items {
 
     public void setDefense(Long defense) {
 	this.defense = defense;
-    }
-
-    public Long getBlockValue() {
-	return blockValue;
-    }
-
-    public void setBlockValue(Long blockValue) {
-	this.blockValue = blockValue;
-    }
-
-    public Long getParryValue() {
-	return parryValue;
-    }
-
-    public void setParryValue(Long parryValue) {
-	this.parryValue = parryValue;
-    }
-
-    public Long getExpertise() {
-	return expertise;
-    }
-
-    public void setExpertise(Long expertise) {
-	this.expertise = expertise;
-    }
-
-    public Long getManaPerFiveSeconds() {
-	return manaPerFiveSeconds;
-    }
-
-    public void setManaPerFiveSeconds(Long manaPerFiveSeconds) {
-	this.manaPerFiveSeconds = manaPerFiveSeconds;
     }
 
 }

@@ -30,16 +30,14 @@ public class UserDetailsImpl implements UserDetails {
 
   private String profilePicture;
   
+  private String guildRank;
+  
   private PlayableCharacter playableCharacter;
 
   private Collection<? extends GrantedAuthority> authorities;
 
-
-
-
-
 public UserDetailsImpl(Long id, String username, String email, String password, String battleTag, String profilePicture,
-	PlayableCharacter playableCharacter, Collection<? extends GrantedAuthority> authorities) {
+	PlayableCharacter playableCharacter, Collection<? extends GrantedAuthority> authorities, String guildRank) {
     super();
     this.id = id;
     this.username = username;
@@ -49,6 +47,7 @@ public UserDetailsImpl(Long id, String username, String email, String password, 
     this.profilePicture = profilePicture;
     this.playableCharacter = playableCharacter;
     this.authorities = authorities;
+    this.guildRank = guildRank;
 }
 
 public static UserDetailsImpl build(User user) {
@@ -64,7 +63,8 @@ public static UserDetailsImpl build(User user) {
         user.getBattleTag(),
         user.getProfilePicture(),
         user.getPlayableCharacter(),
-        authorities);
+        authorities,
+        user.getGuildRank());
   }
 
   @Override
@@ -127,6 +127,14 @@ public static long getSerialversionuid() {
 
 public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
     this.authorities = authorities;
+}
+
+public String getGuildRank() {
+    return guildRank;
+}
+
+public void setGuildRank(String guildRank) {
+    this.guildRank = guildRank;
 }
 
 @Override

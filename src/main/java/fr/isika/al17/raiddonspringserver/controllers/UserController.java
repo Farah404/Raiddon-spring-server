@@ -72,6 +72,7 @@ public class UserController {
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
 	    _user.setPlayableCharacter(user.getPlayableCharacter());
+	    _user.setGuildRank(user.getGuildRank());
 	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
 	} else {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
