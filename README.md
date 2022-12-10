@@ -22,6 +22,7 @@ For building and running the application you need:
 
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Maven 3](https://maven.apache.org)
+- [application.properties](https://github.com/Farah404/Raiddon-spring-server/blob/master/src/main/resources/application.properties.sample) to be renamed and filled according to the project settings
 
 ## Running the application locally
 
