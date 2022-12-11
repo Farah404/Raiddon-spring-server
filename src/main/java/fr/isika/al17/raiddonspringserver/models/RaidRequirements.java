@@ -1,11 +1,14 @@
 package fr.isika.al17.raiddonspringserver.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class RaidRequirements {
+public class RaidRequirements implements Serializable {
+    private static final long serialVersionUID = 1905122041950251207L;
 
     @Id
     @GeneratedValue
@@ -21,8 +24,8 @@ public class RaidRequirements {
 	super();
     }
 
-    public RaidRequirements(Long id, String mainClass, String mainSpec, String secondarySpec,
-	    String mainRole, String secondaryRole) {
+    public RaidRequirements(Long id, String mainClass, String mainSpec, String secondarySpec, String mainRole,
+	    String secondaryRole) {
 	super();
 	this.id = id;
 	this.mainClass = mainClass;

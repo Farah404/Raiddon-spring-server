@@ -1,18 +1,13 @@
-<<<<<<< Updated upstream
-package fr.isika.al17.raiddonspringserver.enumerationClasses;
-=======
+
 package fr.isika.al17.raiddonspringserver.enumeration_classes;
->>>>>>> Stashed changes
 
 public enum LootSystems {
 
-    RAND("Random"), 
-    ATTRIBUTION("Attribution by Loot master"),
-    DRAGON_KILL_POINTS("DKP Dragon Kill Points"),
+    RAND("Random"), ATTRIBUTION("Attribution by Loot master"), DRAGON_KILL_POINTS("DKP Dragon Kill Points"),
     GOLD_DRAGON_KILL_POINTS("Gold Dragon Kill Points");
-    
+
     private String label;
-    
+
     private LootSystems(String label) {
 	this.label = label;
     }
