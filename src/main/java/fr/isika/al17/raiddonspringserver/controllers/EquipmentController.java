@@ -34,7 +34,7 @@ public class EquipmentController {
 	    List<Equipment> equipments = new ArrayList<>();
 
 	    if (headItem == null)
-			equipmentRepo.findAll().forEach(equipments::add);
+		equipmentRepo.findAll().forEach(equipments::add);
 	    else
 		equipmentRepo.findByHeadItem(headItem).forEach(equipments::add);
 

@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class GuildRecruitment Serializable {
+public class GuildRecruitment implements Serializable {
     private static final long serialVersionUID = 1905122041950251207L;
     @Id
     @GeneratedValue
