@@ -1,14 +1,9 @@
 package fr.isika.al17.raiddonspringserver.models;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -35,9 +30,6 @@ public class User {
     @OneToOne
     private PlayableCharacter playableCharacter;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    private Set<Role> roles = new HashSet<>();
-
     public User() {
     }
 
@@ -48,7 +40,7 @@ public class User {
     }
 
     public User(Long id, String username, String email, String password, String battleTag, String profilePicture,
-	    PlayableCharacter playableCharacter, Set<Role> roles, String guildRank) {
+	    PlayableCharacter playableCharacter, String guildRank) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -57,7 +49,6 @@ public class User {
 	this.battleTag = battleTag;
 	this.profilePicture = profilePicture;
 	this.playableCharacter = playableCharacter;
-	this.roles = roles;
 	this.guildRank = guildRank;
     }
 
@@ -115,14 +106,6 @@ public class User {
 
     public void setPlayableCharacter(PlayableCharacter playableCharacter) {
 	this.playableCharacter = playableCharacter;
-    }
-
-    public Set<Role> getRoles() {
-	return roles;
-    }
-
-    public void setRoles(Set<Role> roles) {
-	this.roles = roles;
     }
 
     public String getGuildRank() {

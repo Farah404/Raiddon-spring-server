@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,29 +55,6 @@ public class RaidController {
 	    return new ResponseEntity<>(raidData.get(), HttpStatus.OK);
 	} else {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
-    
-    @PostMapping("/raids/add")
-    public ResponseEntity<Raid> createRaid(@RequestBody Raid raid) {
-	try {
-	    Raid newRaid = raidRepo.save(new Raid(
-		    raid.getId(), 
-		    raid.getRaidName(),
-		    raid.getRaidZone(),
-		    raid.getRaidTotalEncounters(),
-		    raid.getRaidDate(),
-		    raid.getRaidPullTime(),
-		    raid.getRaidOffTime(),
-		    raid.getRaidDifficulty(),
-		    raid.getRaidLootSystem(),
-		    raid.getRaidRequirements(),
-		    raid.getRaidLeader(),
-		    raid.getRaidIcon()
-		    ));
-	    return new ResponseEntity<>(newRaid, HttpStatus.CREATED);
-	} catch (Exception e) {
-	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     

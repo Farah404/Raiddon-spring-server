@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,26 +55,6 @@ public class PlayableCharacterController {
 	    return new ResponseEntity<>(playableCharacterData.get(), HttpStatus.OK);
 	} else {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
-
-    @PostMapping("/characters/add")
-    public ResponseEntity<PlayableCharacter> createPlayableCharacter(@RequestBody PlayableCharacter playableCharacter) {
-	try {
-	    PlayableCharacter newPlayableCharacter = playableCharacterRepo.save(new PlayableCharacter(
-		    playableCharacter.getId(), playableCharacter.getIlevel(), playableCharacter.getLevel(),
-		    playableCharacter.getName(), playableCharacter.getWowLogLink(), playableCharacter.getRealm(),
-		    playableCharacter.getFaction(), playableCharacter.getRace(), playableCharacter.getPlayableClass(),
-		    playableCharacter.getMainSpec(), playableCharacter.getSecondarySpec(),
-		    playableCharacter.getMainRole(), playableCharacter.getSecondaryRole(),
-		    playableCharacter.getFirstProfession(), playableCharacter.getSecondProfession(),
-		    playableCharacter.isHasGuild(), playableCharacter.isCanCook(), playableCharacter.isCanFish(),
-		    playableCharacter.isCanFirstAid(), playableCharacter.getGuildRank(),
-		    playableCharacter.getEquipment(), playableCharacter.getGuild(), playableCharacter.getPreferences()
-		    ));
-	    return new ResponseEntity<>(newPlayableCharacter, HttpStatus.CREATED);
-	} catch (Exception e) {
-	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 

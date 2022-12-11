@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,33 +56,7 @@ public class GuildRecuitmentController {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
     }
-    
-    @PostMapping("/guildRecruitments/add")
-    public ResponseEntity<GuildRecruitment> createGuildRecruitment(@RequestBody GuildRecruitment guildRecruitment) {
-	try {
-	    GuildRecruitment newGuildRecruitment = guildRecruitRepo.save(new GuildRecruitment(
-		    guildRecruitment.getId(),
-		    guildRecruitment.getMinIlevel(),
-		    guildRecruitment.getMinLevel(),
-		    guildRecruitment.getPlayableCharacter(),
-		    guildRecruitment.getQuantity(),
-		    guildRecruitment.getBulk(),
-		    guildRecruitment.getDescription(),
-		    guildRecruitment.getMainSpec(),
-		    guildRecruitment.getSecondarySpec(),
-		    guildRecruitment.getMainRole(),
-		    guildRecruitment.getSecondaryRole(),
-		    guildRecruitment.getFirstProfession(),
-		    guildRecruitment.getSecondProfession(),
-		    guildRecruitment.isCanCook(),
-		    guildRecruitment.isCanFish(),
-		    guildRecruitment.isCanFirstAid()
-		    ));
-	    return new ResponseEntity<>(newGuildRecruitment, HttpStatus.CREATED);
-	} catch (Exception e) {
-	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}
-    }
+   
     
     @DeleteMapping("/guildRecruitments/{id}")
 	public ResponseEntity<HttpStatus> GuildRecruitment(@PathVariable("id") long id) {

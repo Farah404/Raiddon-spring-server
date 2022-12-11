@@ -1,7 +1,4 @@
 
---Roles
-INSERT INTO roles VALUES 
-('1','ROLE_USER'),('2','ROLE_MODERATOR'),('3','ROLE_ADMIN');
 
 
 --Preferences
@@ -684,65 +681,6 @@ INSERT INTO users VALUES
 '$2a$10$MslWfF9gNxR/ZQ2.oQGTmu5r8VOBckr9.5Ws6B6vaRVAqEFv8GgNC',
 'https://64.media.tumblr.com/91df0cca6e0824560d6f2b669a66b4cd/7ae14143090f045b-24/s1280x1920/dabd506a3e49d6d6e9062e7ab20742246f1f0ece.jpg',
 'valerie','4');
-
-
---User roles
-INSERT INTO users_roles VALUES 
-('1','1');
-INSERT INTO users_roles VALUES 
-('2','1');
-INSERT INTO users_roles VALUES 
-('3','1');
-INSERT INTO users_roles VALUES 
-('4','1');
-INSERT INTO users_roles VALUES 
-('5','1');
-INSERT INTO users_roles VALUES 
-('6','1');
-INSERT INTO users_roles VALUES 
-('7','1');
-INSERT INTO users_roles VALUES 
-('8','1');
-INSERT INTO users_roles VALUES 
-('9','1');
-INSERT INTO users_roles VALUES 
-('10','1');
-INSERT INTO users_roles VALUES 
-('11','1');
-INSERT INTO users_roles VALUES 
-('12','1');
-INSERT INTO users_roles VALUES 
-('13','1');
-INSERT INTO users_roles VALUES 
-('14','1');
-INSERT INTO users_roles VALUES 
-('15','1');
-INSERT INTO users_roles VALUES 
-('16','1');
-INSERT INTO users_roles VALUES 
-('17','1');
-INSERT INTO users_roles VALUES 
-('18','1');
-INSERT INTO users_roles VALUES 
-('19','1');
-INSERT INTO users_roles VALUES 
-('20','1');
-INSERT INTO users_roles VALUES 
-('21','1');
-INSERT INTO users_roles VALUES 
-('22','1');
-INSERT INTO users_roles VALUES 
-('23','1');
-INSERT INTO users_roles VALUES 
-('24','1');
-INSERT INTO users_roles VALUES 
-('25','1');
-INSERT INTO users_roles VALUES 
-('26','1');
-INSERT INTO users_roles VALUES 
-('27','1');
-INSERT INTO users_roles VALUES 
-('28','1');
 
 
 --Raid requirements
