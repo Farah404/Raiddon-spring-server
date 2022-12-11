@@ -31,7 +31,7 @@ public class GuildController {
     @GetMapping("/guilds")
     public ResponseEntity<List<Guild>> getAllGuild(@RequestParam(required = false) String guildName) {
 	try {
-	    List<Guild> guilds = new ArrayList<Guild>();
+	    List<Guild> guilds = new ArrayList<>();
 
 	    if (guildName == null)
 		guildRepo.findAll().forEach(guilds::add);
@@ -44,7 +44,7 @@ public class GuildController {
 
 	    return new ResponseEntity<>(guilds, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 
@@ -76,13 +76,13 @@ public class GuildController {
     @PostMapping("/guilds/add")
     public ResponseEntity<Guild> Guild(@RequestBody Guild guild) {
 	try {
-	    Guild _guild = guildRepo.save(new Guild(guild.getId(), guild.getRank(), guild.getTotalPlayers(),
+	    Guild newGuild = guildRepo.save(new Guild(guild.getId(), guild.getRank(), guild.getTotalPlayers(),
 		    guild.getRaidsPerWeek(), guild.getGuildName(), guild.getRealm(), guild.getActivities(),
 		    guild.getGuildEmblem(), guild.getWowLogLink(), guild.getSlogan(), guild.getObjectives(),
 		    guild.isRecruiting(), guild.getLootSystems(), guild.getGuildRecruitment(), guild.getGuildMaster()));
-	    return new ResponseEntity<>(_guild, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newGuild, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 

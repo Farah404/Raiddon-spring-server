@@ -1,11 +1,14 @@
 package fr.isika.al17.raiddonspringserver.models;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class Equipment {
+public class Equipment implements Serializable {
+    private static final long serialVersionUID = 1905122041950251207L;
 
     @Id
     @GeneratedValue

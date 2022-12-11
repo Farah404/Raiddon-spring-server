@@ -32,7 +32,7 @@ public class PreferencesController {
     @GetMapping("/preferences")
     public ResponseEntity<List<Preferences>> getAllPreferences(@RequestParam(required = false) String objectives) {
 	try {
-	    List<Preferences> preferences = new ArrayList<Preferences>();
+	    List<Preferences> preferences = new ArrayList<>();
 
 	    if (objectives == null)
 		prefRepo.findAll().forEach(preferences::add);
@@ -56,14 +56,14 @@ public class PreferencesController {
 	Optional<Preferences> preferencesData = prefRepo.findById(id);
 
 	if (preferencesData.isPresent()) {
-	    Preferences _preferences = preferencesData.get();
-	    _preferences.setRaidsPerWeek(preferences.getRaidsPerWeek());
-	    _preferences.setDescription(preferences.getDescription());
-	    _preferences.setSeekingGuild(preferences.isSeekingGuild());
-	    _preferences.setSeekingRaid(preferences.isSeekingRaid());
-	    _preferences.setObjectives(preferences.getObjectives());
-	    _preferences.setLootSystems(preferences.getLootSystems());
-	    return new ResponseEntity<>(prefRepo.save(_preferences), HttpStatus.OK);
+	    Preferences updatedPreferences = preferencesData.get();
+	    updatedPreferences.setRaidsPerWeek(preferences.getRaidsPerWeek());
+	    updatedPreferences.setDescription(preferences.getDescription());
+	    updatedPreferences.setSeekingGuild(preferences.isSeekingGuild());
+	    updatedPreferences.setSeekingRaid(preferences.isSeekingRaid());
+	    updatedPreferences.setObjectives(preferences.getObjectives());
+	    updatedPreferences.setLootSystems(preferences.getLootSystems());
+	    return new ResponseEntity<>(prefRepo.save(updatedPreferences), HttpStatus.OK);
 	} else {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
@@ -72,17 +72,17 @@ public class PreferencesController {
     @PostMapping("/preferences/add")
     public ResponseEntity<Preferences> createPreferences(@RequestBody Preferences preferences) {
 	try {
-	    Preferences _preferences = prefRepo.save(new Preferences(preferences.getId(), preferences.getRaidsPerWeek(),
+	    Preferences newpreferences = prefRepo.save(new Preferences(preferences.getId(), preferences.getRaidsPerWeek(),
 		    preferences.isSeekingGuild(), preferences.isSeekingRaid(), preferences.getDescription(),
 		    preferences.getObjectives(), preferences.getLootSystems()));
-	    return new ResponseEntity<>(_preferences, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newpreferences, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 
     @DeleteMapping("/preferences/{id}")
-    public ResponseEntity<HttpStatus> Preferences(@PathVariable("id") long id) {
+    public ResponseEntity<HttpStatus> deletePreferences(@PathVariable("id") long id) {
 	try {
 	    prefRepo.deleteById(id);
 	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);

@@ -31,7 +31,7 @@ public class EquipmentController {
     @GetMapping("/equipment")
     public ResponseEntity<List<Equipment>> getAllEquipment(@RequestParam(required = false) String headItem) {
 	try {
-	    List<Equipment> equipments = new ArrayList<Equipment>();
+	    List<Equipment> equipments = new ArrayList<>();
 
 	    if (headItem == null)
 		equipmentRepo.findAll().forEach(equipments::add);
@@ -44,7 +44,7 @@ public class EquipmentController {
 
 	    return new ResponseEntity<>(equipments, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 
@@ -62,16 +62,16 @@ public class EquipmentController {
     @PostMapping("/equipment/add")
     public ResponseEntity<Equipment> creatEequipment(@RequestBody Equipment equipment) {
 	try {
-	    Equipment _equipment = equipmentRepo.save(new Equipment(equipment.getId(), equipment.getHeadItem(),
+	    Equipment newEquipment = equipmentRepo.save(new Equipment(equipment.getId(), equipment.getHeadItem(),
 		    equipment.getShoulderItem(), equipment.getBackItem(), equipment.getChestItem(),
 		    equipment.getWristItem(), equipment.getHandItem(), equipment.getWaistItem(),
 		    equipment.getLegsItem(), equipment.getFeetItem(), equipment.getNeckItem(),
 		    equipment.getFirstRingItem(), equipment.getSecondRingItem(), equipment.getFirstTrinketItem(),
 		    equipment.getSecondTrinketItem(), equipment.getMainHandItem(), equipment.getOffHandItem(),
 		    equipment.getRelicItem()));
-	    return new ResponseEntity<>(_equipment, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newEquipment, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 

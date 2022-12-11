@@ -32,7 +32,7 @@ public class RaidRequirementsController {
     public ResponseEntity<List<RaidRequirements>> getAllRaidRequirements(
 	    @RequestParam(required = false) String mainClass) {
 	try {
-	    List<RaidRequirements> raidRequirements = new ArrayList<RaidRequirements>();
+	    List<RaidRequirements> raidRequirements = new ArrayList<>();
 
 	    if (mainClass == null)
 		raidRequirementsRepo.findAll().forEach(raidRequirements::add);
@@ -45,7 +45,7 @@ public class RaidRequirementsController {
 
 	    return new ResponseEntity<>(raidRequirements, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 
@@ -61,15 +61,15 @@ public class RaidRequirementsController {
     }
 
     @PostMapping("/raidRequirements/add")
-    public ResponseEntity<RaidRequirements> RaidRequirements(@RequestBody RaidRequirements raidRequirements) {
+    public ResponseEntity<RaidRequirements> deleteRaidRequirements(@RequestBody RaidRequirements raidRequirements) {
 	try {
-	    RaidRequirements _raidRequirements = raidRequirementsRepo.save(new RaidRequirements(
+	    RaidRequirements newRaidRequirements = raidRequirementsRepo.save(new RaidRequirements(
 		    raidRequirements.getId(), raidRequirements.getMainClass(),
 		    raidRequirements.getMainSpec(), raidRequirements.getSecondarySpec(), raidRequirements.getMainRole(),
 		    raidRequirements.getSecondaryRole()));
-	    return new ResponseEntity<>(_raidRequirements, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newRaidRequirements, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     

@@ -1,4 +1,3 @@
-
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Farah404/Raiddon-bnet-data/blob/master/LICENSE)
 [![git](https://badgen.net/badge/icon/git?icon=git&label)](https://git-scm.com)

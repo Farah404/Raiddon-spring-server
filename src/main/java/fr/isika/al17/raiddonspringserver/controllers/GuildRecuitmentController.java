@@ -32,7 +32,7 @@ public class GuildRecuitmentController {
     public ResponseEntity<List<GuildRecruitment>> getAllGuildRecruitments(
 	    @RequestParam(required = false) String playableCharacter) {
 	try {
-	    List<GuildRecruitment> guildRecruitments = new ArrayList<GuildRecruitment>();
+	    List<GuildRecruitment> guildRecruitments = new ArrayList<>();
 
 	    if (playableCharacter == null)
 		guildRecruitRepo.findAll().forEach(guildRecruitments::add);
@@ -44,7 +44,7 @@ public class GuildRecuitmentController {
 
 	    return new ResponseEntity<>(guildRecruitments, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     
@@ -62,7 +62,7 @@ public class GuildRecuitmentController {
     @PostMapping("/guildRecruitments/add")
     public ResponseEntity<GuildRecruitment> createGuildRecruitment(@RequestBody GuildRecruitment guildRecruitment) {
 	try {
-	    GuildRecruitment _guildRecruitment = guildRecruitRepo.save(new GuildRecruitment(
+	    GuildRecruitment newGuildRecruitment = guildRecruitRepo.save(new GuildRecruitment(
 		    guildRecruitment.getId(),
 		    guildRecruitment.getMinIlevel(),
 		    guildRecruitment.getMinLevel(),
@@ -80,9 +80,9 @@ public class GuildRecuitmentController {
 		    guildRecruitment.isCanFish(),
 		    guildRecruitment.isCanFirstAid()
 		    ));
-	    return new ResponseEntity<>(_guildRecruitment, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newGuildRecruitment, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     

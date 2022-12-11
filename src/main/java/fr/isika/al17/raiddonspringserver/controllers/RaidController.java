@@ -32,7 +32,7 @@ public class RaidController {
     public ResponseEntity<List<Raid>> getAllRaid(
 	    @RequestParam(required = false) String raidZone) {
 	try {
-	    List<Raid> raids = new ArrayList<Raid>();
+	    List<Raid> raids = new ArrayList<>();
 
 	    if (raidZone == null)
 		raidRepo.findAll().forEach(raids::add);
@@ -45,7 +45,7 @@ public class RaidController {
 
 	    return new ResponseEntity<>(raids, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     
@@ -63,7 +63,7 @@ public class RaidController {
     @PostMapping("/raids/add")
     public ResponseEntity<Raid> createRaid(@RequestBody Raid raid) {
 	try {
-	    Raid _raid = raidRepo.save(new Raid(
+	    Raid newRaid = raidRepo.save(new Raid(
 		    raid.getId(), 
 		    raid.getRaidName(),
 		    raid.getRaidZone(),
@@ -77,14 +77,14 @@ public class RaidController {
 		    raid.getRaidLeader(),
 		    raid.getRaidIcon()
 		    ));
-	    return new ResponseEntity<>(_raid, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newRaid, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     
     @DeleteMapping("/raids/{id}")
-	public ResponseEntity<HttpStatus> Raid(@PathVariable("id") long id) {
+	public ResponseEntity<HttpStatus> deleteRaid(@PathVariable("id") long id) {
 		try {
 		    raidRepo.deleteById(id);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);

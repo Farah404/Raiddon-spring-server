@@ -32,7 +32,7 @@ public class PlayableCharacterController {
     public ResponseEntity<List<PlayableCharacter>> getAllPlayableCharacter(
 	    @RequestParam(required = false) String name) {
 	try {
-	    List<PlayableCharacter> playableCharacters = new ArrayList<PlayableCharacter>();
+	    List<PlayableCharacter> playableCharacters = new ArrayList<>();
 
 	    if (name == null)
 		playableCharacterRepo.findAll().forEach(playableCharacters::add);
@@ -45,7 +45,7 @@ public class PlayableCharacterController {
 
 	    return new ResponseEntity<>(playableCharacters, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 
@@ -63,7 +63,7 @@ public class PlayableCharacterController {
     @PostMapping("/characters/add")
     public ResponseEntity<PlayableCharacter> createPlayableCharacter(@RequestBody PlayableCharacter playableCharacter) {
 	try {
-	    PlayableCharacter _playableCharacter = playableCharacterRepo.save(new PlayableCharacter(
+	    PlayableCharacter newPlayableCharacter = playableCharacterRepo.save(new PlayableCharacter(
 		    playableCharacter.getId(), playableCharacter.getIlevel(), playableCharacter.getLevel(),
 		    playableCharacter.getName(), playableCharacter.getWowLogLink(), playableCharacter.getRealm(),
 		    playableCharacter.getFaction(), playableCharacter.getRace(), playableCharacter.getPlayableClass(),
@@ -74,9 +74,9 @@ public class PlayableCharacterController {
 		    playableCharacter.isCanFirstAid(), playableCharacter.getGuildRank(),
 		    playableCharacter.getEquipment(), playableCharacter.getGuild(), playableCharacter.getPreferences()
 		    ));
-	    return new ResponseEntity<>(_playableCharacter, HttpStatus.CREATED);
+	    return new ResponseEntity<>(newPlayableCharacter, HttpStatus.CREATED);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
 

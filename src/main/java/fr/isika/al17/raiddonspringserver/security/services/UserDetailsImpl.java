@@ -2,7 +2,6 @@ package fr.isika.al17.raiddonspringserver.security.services;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -166,13 +165,4 @@ public void setPlayableCharacter(PlayableCharacter playableCharacter) {
     this.playableCharacter = playableCharacter;
 }
 
-@Override
-  public boolean equals(Object o) {
-    if (this == o)
-      return true;
-    if (o == null || getClass() != o.getClass())
-      return false;
-    UserDetailsImpl user = (UserDetailsImpl) o;
-    return Objects.equals(id, user.id);
-  }
 }

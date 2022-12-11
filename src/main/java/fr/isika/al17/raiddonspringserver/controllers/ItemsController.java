@@ -28,7 +28,7 @@ public class ItemsController {
     public ResponseEntity<List<Items>> getAllItems(
 	    @RequestParam(required = false) String itemName) {
 	try {
-	    List<Items> items = new ArrayList<Items>();
+	    List<Items> items = new ArrayList<>();
 
 	    if (itemName == null)
 		itemsRepo.findAll().forEach(items::add);
@@ -41,7 +41,7 @@ public class ItemsController {
 
 	    return new ResponseEntity<>(items, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
     

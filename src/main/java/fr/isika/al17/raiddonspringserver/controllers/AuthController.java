@@ -22,7 +22,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.isika.al17.raiddonspringserver.enumerationClasses.ERole;
+import fr.isika.al17.raiddonspringserver.constants.Constants;
+import fr.isika.al17.raiddonspringserver.enumeration_classes.ERole;
 import fr.isika.al17.raiddonspringserver.models.Role;
 import fr.isika.al17.raiddonspringserver.models.User;
 import fr.isika.al17.raiddonspringserver.payload.request.LoginRequest;
@@ -34,7 +35,7 @@ import fr.isika.al17.raiddonspringserver.repository.UserRepository;
 import fr.isika.al17.raiddonspringserver.security.jwt.JwtUtils;
 import fr.isika.al17.raiddonspringserver.security.services.UserDetailsImpl;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -78,11 +79,11 @@ public class AuthController {
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
 	if (userRepository.existsByUsername(signUpRequest.getUsername())) {
-	    return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
+	    return ResponseEntity.badRequest().body(new MessageResponse(Constants.USERNAME_EXISTS));
 	}
 
 	if (userRepository.existsByEmail(signUpRequest.getEmail())) {
-	    return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
+	    return ResponseEntity.badRequest().body(new MessageResponse(Constants.EMAIL_EXISTS));
 	}
 
 	// Create new user's account
@@ -94,26 +95,26 @@ public class AuthController {
 
 	if (strRoles == null) {
 	    Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-		    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+		    .orElseThrow(() -> new RuntimeException(Constants.ROLE_NOT_FOUND));
 	    roles.add(userRole);
 	} else {
 	    strRoles.forEach(role -> {
 		switch (role) {
 		    case "admin":
 			Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+				.orElseThrow(() -> new RuntimeException(Constants.ROLE_NOT_FOUND));
 			roles.add(adminRole);
 
 			break;
 		    case "mod":
 			Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+				.orElseThrow(() -> new RuntimeException(Constants.ROLE_NOT_FOUND));
 			roles.add(modRole);
 
 			break;
 		    default:
 			Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-				.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+				.orElseThrow(() -> new RuntimeException(Constants.ROLE_NOT_FOUND));
 			roles.add(userRole);
 		}
 	    });

@@ -31,7 +31,7 @@ public class UserController {
     @GetMapping("/users")
     public ResponseEntity<List<User>> getAllUsers(@RequestParam(required = false) String username) {
 	try {
-	    List<User> users = new ArrayList<User>();
+	    List<User> users = new ArrayList<>();
 
 	    if (username == null)
 		userRepo.findAll().forEach(users::add);
@@ -44,7 +44,7 @@ public class UserController {
 
 	    return new ResponseEntity<>(users, HttpStatus.OK);
 	} catch (Exception e) {
-	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
     }
@@ -65,15 +65,15 @@ public class UserController {
 	Optional<User> userData = userRepo.findById(id);
 
 	if (userData.isPresent()) {
-	    User _user = userData.get();
-	    _user.setUsername(user.getUsername());
-	    _user.setEmail(user.getEmail());
-	    _user.setPassword(user.getPassword());
-	    _user.setBattleTag(user.getBattleTag());
-	    _user.setProfilePicture(user.getProfilePicture());
-	    _user.setPlayableCharacter(user.getPlayableCharacter());
-	    _user.setGuildRank(user.getGuildRank());
-	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
+	    User updatedUser = userData.get();
+	    updatedUser.setUsername(user.getUsername());
+	    updatedUser.setEmail(user.getEmail());
+	    updatedUser.setPassword(user.getPassword());
+	    updatedUser.setBattleTag(user.getBattleTag());
+	    updatedUser.setProfilePicture(user.getProfilePicture());
+	    updatedUser.setPlayableCharacter(user.getPlayableCharacter());
+	    updatedUser.setGuildRank(user.getGuildRank());
+	    return new ResponseEntity<>(userRepo.save(updatedUser), HttpStatus.OK);
 	} else {
 	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
