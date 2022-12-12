@@ -120,6 +120,7 @@ public class AuthController {
 	}
 
 	user.setRoles(roles);
+	user.setProfilePicture("https://i.pinimg.com/originals/8f/bf/35/8fbf35595d965509d1d809f246b9bde4.gif");
 	userRepository.save(user);
 
 	return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
