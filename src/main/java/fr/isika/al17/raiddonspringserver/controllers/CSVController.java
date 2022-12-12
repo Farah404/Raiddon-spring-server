@@ -21,7 +21,7 @@ import fr.isika.al17.raiddonspringserver.security.services.CSVService;
 
 @CrossOrigin("*")
 @Controller
-@RequestMapping("/api/csvc")
+@RequestMapping("/api/csv")
 public class CSVController {
     
 
