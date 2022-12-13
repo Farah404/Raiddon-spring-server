@@ -2,7 +2,6 @@ package fr.isika.al17.raiddonspringserver.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,50 +45,15 @@ public class GuildController {
 	}
     }
 
-    @GetMapping("/guilds/recruiting")
-	public ResponseEntity<List<Guild>> findByRecruiting() {
-	try {
-		List<Guild> guilds = guildRepo.findByRecruiting(true);
-
-		if (guilds.isEmpty()) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		}
-		return new ResponseEntity<>(guilds, HttpStatus.OK);
-	} catch (Exception e) {
-		return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}
-}
-    
-    @GetMapping("/guilds/{id}")
-    public ResponseEntity<Guild> getGuildById(@PathVariable("id") long id) {
-	Optional<Guild> guildData = guildRepo.findById(id);
-
-	if (guildData.isPresent()) {
-	    return new ResponseEntity<>(guildData.get(), HttpStatus.OK);
-	} else {
-	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
 
     @DeleteMapping("/guilds/{id}")
-    public ResponseEntity<HttpStatus> Guild(@PathVariable("id") long id) {
+    public ResponseEntity<HttpStatus> deleteGuild(@PathVariable("id") long id) {
 	try {
 	    guildRepo.deleteById(id);
 	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	} catch (Exception e) {
 	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-    }
-
-    @DeleteMapping("/guilds")
-    public ResponseEntity<HttpStatus> deleteAllGuilds() {
-	try {
-	    guildRepo.deleteAll();
-	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	} catch (Exception e) {
-	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}
-
     }
 
 }

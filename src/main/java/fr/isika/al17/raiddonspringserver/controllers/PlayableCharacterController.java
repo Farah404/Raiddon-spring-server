@@ -2,7 +2,6 @@ package fr.isika.al17.raiddonspringserver.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -47,19 +46,9 @@ public class PlayableCharacterController {
 	}
     }
 
-    @GetMapping("/characters/{id}")
-    public ResponseEntity<PlayableCharacter> getPlayableCharacterById(@PathVariable("id") long id) {
-	Optional<PlayableCharacter> playableCharacterData = playableCharacterRepo.findById(id);
-
-	if (playableCharacterData.isPresent()) {
-	    return new ResponseEntity<>(playableCharacterData.get(), HttpStatus.OK);
-	} else {
-	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
 
     @DeleteMapping("/characters/{id}")
-    public ResponseEntity<HttpStatus> PlayableCharacter(@PathVariable("id") long id) {
+    public ResponseEntity<HttpStatus> deletePlayableCharacter(@PathVariable("id") long id) {
 	try {
 	    playableCharacterRepo.deleteById(id);
 	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);

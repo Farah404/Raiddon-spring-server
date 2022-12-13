@@ -2,7 +2,6 @@ package fr.isika.al17.raiddonspringserver.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,10 +21,10 @@ import fr.isika.al17.raiddonspringserver.repository.GuildRecruitmentRepository;
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api")
 public class GuildRecuitmentController {
-    
+
     @Autowired
     GuildRecruitmentRepository guildRecruitRepo;
-    
+
     @GetMapping("/guildRecruitments")
     public ResponseEntity<List<GuildRecruitment>> getAllGuildRecruitments(
 	    @RequestParam(required = false) String playableCharacter) {
@@ -45,39 +44,15 @@ public class GuildRecuitmentController {
 	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
-    
-    @GetMapping("/guildRecruitments/{id}")
-    public ResponseEntity<GuildRecruitment> getGuildRecruitmentById(@PathVariable("id") long id) {
-	Optional<GuildRecruitment> guildRecruitmentData = guildRecruitRepo.findById(id);
 
-	if (guildRecruitmentData.isPresent()) {
-	    return new ResponseEntity<>(guildRecruitmentData.get(), HttpStatus.OK);
-	} else {
-	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
-   
-    
     @DeleteMapping("/guildRecruitments/{id}")
-	public ResponseEntity<HttpStatus> GuildRecruitment(@PathVariable("id") long id) {
-		try {
-		    guildRecruitRepo.deleteById(id);
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		} catch (Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-	}
-    
-    @DeleteMapping("/characters")
-    public ResponseEntity<HttpStatus> deleteAllGuildRecruitments() {
+    public ResponseEntity<HttpStatus> deleteGuildRecruitment(@PathVariable("id") long id) {
 	try {
-	    guildRecruitRepo.deleteAll();
+	    guildRecruitRepo.deleteById(id);
 	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	} catch (Exception e) {
 	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-
     }
-
 
 }

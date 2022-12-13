@@ -2,7 +2,6 @@ package fr.isika.al17.raiddonspringserver.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -46,19 +45,8 @@ public class EquipmentController {
 	}
     }
 
-    @GetMapping("/equipment/{id}")
-    public ResponseEntity<Equipment> getEquipmentById(@PathVariable("id") long id) {
-	Optional<Equipment> equipmentData = equipmentRepo.findById(id);
-
-	if (equipmentData.isPresent()) {
-	    return new ResponseEntity<>(equipmentData.get(), HttpStatus.OK);
-	} else {
-	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
-
     @DeleteMapping("/equipment/{id}")
-    public ResponseEntity<HttpStatus> Equipment(@PathVariable("id") long id) {
+    public ResponseEntity<HttpStatus> deleteEquipment(@PathVariable("id") long id) {
 	try {
 	    equipmentRepo.deleteById(id);
 	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -67,15 +55,5 @@ public class EquipmentController {
 	}
     }
 
-    @DeleteMapping("/equipment")
-    public ResponseEntity<HttpStatus> deleteAllEquipment() {
-	try {
-	    equipmentRepo.deleteAll();
-	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	} catch (Exception e) {
-	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-	}
-
-    }
 
 }
