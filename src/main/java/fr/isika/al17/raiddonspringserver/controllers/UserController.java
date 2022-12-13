@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.isika.al17.raiddonspringserver.models.PlayableCharacter;
 import fr.isika.al17.raiddonspringserver.models.User;
 import fr.isika.al17.raiddonspringserver.repository.UserRepository;
 
@@ -72,9 +71,7 @@ public class UserController {
 	    _user.setPassword(user.getPassword());
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
-//	    _user.setPlayableCharacter(user.getPlayableCharacter());
-	    PlayableCharacter playablecharacter = _user.getPlayableCharacter();
-	    playablecharacter.setPreferences(user.getPlayableCharacter().getPreferences());
+	    _user.setPlayableCharacter(user.getPlayableCharacter());
 	    _user.setGuildRank(user.getGuildRank());
 	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
 	} else {
