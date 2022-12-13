@@ -72,7 +72,7 @@ public class UserController {
 	    _user.setPassword(user.getPassword());
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
-	    _user.setPlayableCharacter(user.getPlayableCharacter());
+//	    _user.setPlayableCharacter(user.getPlayableCharacter());
 	    PlayableCharacter playablecharacter = _user.getPlayableCharacter();
 	    playablecharacter.setPreferences(null);
 	    _user.setGuildRank(user.getGuildRank());
