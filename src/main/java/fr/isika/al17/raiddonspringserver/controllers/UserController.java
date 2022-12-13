@@ -74,7 +74,7 @@ public class UserController {
 	    _user.setProfilePicture(user.getProfilePicture());
 //	    _user.setPlayableCharacter(user.getPlayableCharacter());
 	    PlayableCharacter playablecharacter = _user.getPlayableCharacter();
-	    playablecharacter.setPreferences(null);
+	    playablecharacter.setPreferences(user.getPlayableCharacter().getPreferences());
 	    _user.setGuildRank(user.getGuildRank());
 	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
 	} else {
