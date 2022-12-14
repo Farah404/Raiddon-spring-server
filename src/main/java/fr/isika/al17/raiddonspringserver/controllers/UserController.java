@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.actuate.health.Health;
-import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,12 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.isika.al17.raiddonspringserver.models.User;
-import fr.isika.al17.raiddonspringserver.models.UserDTO;
 import fr.isika.al17.raiddonspringserver.repository.UserRepository;
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
-public class UserController implements HealthIndicator {
+public class UserController {
 
     @Autowired
     UserRepository userRepo;
@@ -51,19 +48,10 @@ public class UserController implements HealthIndicator {
 
     }
 
-    @GetMapping("/users/{username}")
-    public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username) {
-	Optional<User> userData = userRepo.findByUsername(username);
-	if (userData.isPresent()) {
-	    return new ResponseEntity<>(userData.get(), HttpStatus.OK);
-	} else {
-	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}
-    }
-
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
 	Optional<User> userData = userRepo.findById(id);
+
 	if (userData.isPresent()) {
 	    return new ResponseEntity<>(userData.get(), HttpStatus.OK);
 	} else {
@@ -71,14 +59,18 @@ public class UserController implements HealthIndicator {
 	}
     }
 
-    @PutMapping("/users")
-    public ResponseEntity<User> updateUser(@RequestBody UserDTO user) {
-	Optional<User> userData = userRepo.findByUsername(user.getUsername());
+    @PutMapping("/users/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
+	Optional<User> userData = userRepo.findById(id);
 
 	if (userData.isPresent()) {
 	    User _user = userData.get();
+	    _user.setUsername(user.getUsername());
+	    _user.setEmail(user.getEmail());
+	    _user.setPassword(user.getPassword());
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
+	    _user.setPlayableCharacter(user.getPlayableCharacter());
 	    _user.setGuildRank(user.getGuildRank());
 	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
 	} else {
@@ -105,11 +97,6 @@ public class UserController implements HealthIndicator {
 	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-    }
-
-    @Override
-    public Health health() {
-	return Health.down().build();
     }
 
 }
