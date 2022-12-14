@@ -67,9 +67,6 @@ public class UserController {
 
 	if (userData.isPresent()) {
 	    User _user = userData.get();
-	    _user.setUsername(user.getUsername());
-	    _user.setEmail(user.getEmail());
-	    _user.setPassword(user.getPassword());
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
 	    _user.setGuildRank(user.getGuildRank());
