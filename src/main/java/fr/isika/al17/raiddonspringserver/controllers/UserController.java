@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.isika.al17.raiddonspringserver.models.User;
+import fr.isika.al17.raiddonspringserver.models.UserDTO;
 import fr.isika.al17.raiddonspringserver.repository.UserRepository;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -60,9 +61,9 @@ public class UserController {
 	}
     }
 
-    @PutMapping("/users/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
-	Optional<User> userData = userRepo.findById(id);
+    @PutMapping("/users")
+    public ResponseEntity<User> updateUser(@RequestBody UserDTO user) {
+	Optional<User> userData = userRepo.findByUsername(user.getUsername());
 
 	if (userData.isPresent()) {
 	    User _user = userData.get();
@@ -71,7 +72,6 @@ public class UserController {
 	    _user.setPassword(user.getPassword());
 	    _user.setBattleTag(user.getBattleTag());
 	    _user.setProfilePicture(user.getProfilePicture());
-	    _user.setPlayableCharacter(user.getPlayableCharacter());
 	    _user.setGuildRank(user.getGuildRank());
 	    return new ResponseEntity<>(userRepo.save(_user), HttpStatus.OK);
 	} else {
