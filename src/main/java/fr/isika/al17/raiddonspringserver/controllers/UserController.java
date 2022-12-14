@@ -49,6 +49,12 @@ public class UserController {
 	}
 
     }
+    
+    @GetMapping("/users/{username")
+    public Optional<User> getUserByUsername(@PathVariable String username) {
+	Optional<User> userData = userRepo.findByUsername(username);
+	return userData;
+    }
 
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
