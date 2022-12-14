@@ -50,7 +50,7 @@ public class UserController {
 
     }
     
-    @GetMapping("/users/{username")
+    @GetMapping("/users/{username}")
     public Optional<User> getUserByUsername(@PathVariable String username) {
 	Optional<User> userData = userRepo.findByUsername(username);
 	return userData;
