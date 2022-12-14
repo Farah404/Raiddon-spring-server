@@ -12,10 +12,10 @@ import org.springframework.web.filter.CorsFilter;
 
 
 @SpringBootApplication
-public class SpringBootLoginExampleApplication {
+public class RaiddonApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootLoginExampleApplication.class, args);
+		SpringApplication.run(RaiddonApplication.class, args);
 	}
 	
 	@Bean
