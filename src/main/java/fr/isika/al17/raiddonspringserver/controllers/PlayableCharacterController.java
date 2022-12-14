@@ -12,12 +12,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.isika.al17.raiddonspringserver.models.PlayableCharacter;
+import fr.isika.al17.raiddonspringserver.models.PlayableCharacterDTO;
 import fr.isika.al17.raiddonspringserver.repository.PlayableCharacterRepository;
 
 @RestController
@@ -77,6 +79,37 @@ public class PlayableCharacterController {
 	    return new ResponseEntity<>(_playableCharacter, HttpStatus.CREATED);
 	} catch (Exception e) {
 	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+    }
+    
+    @PutMapping("/charactersDTO")
+    public ResponseEntity<PlayableCharacter> updatecharactersDTO(@RequestBody PlayableCharacterDTO playableCharacter) {
+	Optional<PlayableCharacter> playableCharacterData = playableCharacterRepo.findByname(playableCharacter.getName());
+
+	if (playableCharacterData.isPresent()) {
+	    PlayableCharacter _playableCharacter = playableCharacterData.get();
+	    _playableCharacter.setIlevel(playableCharacter.getIlevel());
+	    _playableCharacter.setLevel(playableCharacter.getLevel());
+	    _playableCharacter.setWowLogLink(playableCharacter.getWowLogLink());
+	    _playableCharacter.setRealm(playableCharacter.getRealm());
+	    _playableCharacter.setFaction(playableCharacter.getFaction());
+	    _playableCharacter.setRace(playableCharacter.getRace());
+	    _playableCharacter.setPlayableClass(playableCharacter.getPlayableClass());
+	    _playableCharacter.setMainSpec(playableCharacter.getMainSpec());
+	    _playableCharacter.setSecondarySpec(playableCharacter.getSecondarySpec());
+	    _playableCharacter.setMainRole(playableCharacter.getMainRole());
+	    _playableCharacter.setSecondaryRole(playableCharacter.getSecondaryRole());
+	    _playableCharacter.setFirstProfession(playableCharacter.getFirstProfession());
+	    _playableCharacter.setFirstProfession(playableCharacter.getSecondProfession());
+	    _playableCharacter.setHasGuild(playableCharacter.isHasGuild());
+	    _playableCharacter.setCanCook(playableCharacter.isCanCook());
+	    _playableCharacter.setCanFish(playableCharacter.isCanFish());
+	    _playableCharacter.setCanFirstAid(playableCharacter.isCanFirstAid());
+	    _playableCharacter.setGuildRank(playableCharacter.getGuildRank());
+	    
+	    return new ResponseEntity<>(playableCharacterRepo.save(_playableCharacter), HttpStatus.OK);
+	} else {
+	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
     }
 
