@@ -51,9 +51,9 @@ public class UserController {
     }
     
     @GetMapping("/users/{username}")
-    public Optional<User> getUserByUsername(@PathVariable String username) {
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username) {
 	Optional<User> userData = userRepo.findByUsername(username);
-	return userData;
+	return new ResponseEntity<>(userData.get(), HttpStatus.OK);
     }
 
     @GetMapping("/users/{id}")
