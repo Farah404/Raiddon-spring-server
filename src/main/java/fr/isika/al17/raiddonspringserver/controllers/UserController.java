@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -24,7 +26,7 @@ import fr.isika.al17.raiddonspringserver.repository.UserRepository;
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
-public class UserController {
+public class UserController implements HealthIndicator {
 
     @Autowired
     UserRepository userRepo;
@@ -49,17 +51,20 @@ public class UserController {
 	}
 
     }
-    
+
     @GetMapping("/users/{username}")
     public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username) {
 	Optional<User> userData = userRepo.findByUsername(username);
-	return new ResponseEntity<>(userData.get(), HttpStatus.OK);
+	if (userData.isPresent()) {
+	    return new ResponseEntity<>(userData.get(), HttpStatus.OK);
+	} else {
+	    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
     }
 
     @GetMapping("/users/{id}")
     public ResponseEntity<User> getUserById(@PathVariable("id") long id) {
 	Optional<User> userData = userRepo.findById(id);
-
 	if (userData.isPresent()) {
 	    return new ResponseEntity<>(userData.get(), HttpStatus.OK);
 	} else {
@@ -101,6 +106,11 @@ public class UserController {
 	    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
+    }
+
+    @Override
+    public Health health() {
+	return Health.down().build();
     }
 
 }
