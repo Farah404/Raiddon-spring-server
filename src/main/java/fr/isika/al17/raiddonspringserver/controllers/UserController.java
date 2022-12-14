@@ -50,9 +50,9 @@ public class UserController implements HealthIndicator {
 
     }
 
-    @GetMapping("/user")
-    public ResponseEntity<User> getUserByUsername(@RequestBody UserDTO user) {
-	Optional<User> userData = userRepo.findByUsername(user.getUsername());
+    @GetMapping("/users/{username}")
+    public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username) {
+	Optional<User> userData = userRepo.findByUsername(username);
 	if (userData.isPresent()) {
 	    return new ResponseEntity<>(userData.get(), HttpStatus.OK);
 	} else {
