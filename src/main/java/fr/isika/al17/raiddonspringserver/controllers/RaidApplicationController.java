@@ -20,7 +20,7 @@ public class RaidApplicationController {
     @Autowired
     RaidApplicationRepository raidApplicationRepo;
 
-    @PostMapping("/guildApplication/add")
+    @PostMapping("/raidApplication/add")
     public ResponseEntity<RaidApplication> addRaidApplication(@RequestBody RaidApplication raidApplication) {
 	try {
 	    RaidApplication _raidApplication = raidApplicationRepo.save(
