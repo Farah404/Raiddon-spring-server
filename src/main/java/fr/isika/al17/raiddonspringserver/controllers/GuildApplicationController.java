@@ -27,6 +27,8 @@ public class GuildApplicationController {
     @PostMapping("/guildApplication/add")
     public ResponseEntity<GuildApplication> addGuildApplication(@RequestBody GuildApplication guildApplication) {
 	try {
+	    System.out.println(guildApplication.getConnectedUser());
+	    System.out.println(guildApplication.getSelectedGuild());
 	    GuildApplication _guildApplication = guildApplicationRepo.save(new GuildApplication(null,
 		    guildApplication.getConnectedUser(), guildApplication.getSelectedGuild()));
 	    return new ResponseEntity<>(_guildApplication, HttpStatus.CREATED);
