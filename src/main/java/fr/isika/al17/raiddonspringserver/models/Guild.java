@@ -177,15 +177,4 @@ public class Guild {
         this.guildMaster = guildMaster;
     }
 
-    @Override
-    public String toString() {
-	return "Guild [id=" + id + ", rank=" + rank + ", totalPlayers=" + totalPlayers + ", raidsPerWeek="
-		+ raidsPerWeek + ", guildName=" + guildName + ", realm=" + realm + ", activities=" + activities
-		+ ", guildEmblem=" + guildEmblem + ", wowLogLink=" + wowLogLink + ", slogan=" + slogan + ", objectives="
-		+ objectives + ", recruiting=" + recruiting + ", lootSystems=" + lootSystems + ", guildMaster="
-		+ guildMaster + ", guildRecruitment=" + guildRecruitment + "]";
-    }
-    
-    
-    
 }

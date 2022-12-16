@@ -54,12 +54,4 @@ public class GuildApplication {
 	this.selectedGuild = selectedGuild;
     }
 
-    @Override
-    public String toString() {
-	return "GuildApplication [id=" + id + ", connectedUser=" + connectedUser + ", selectedGuild=" + selectedGuild
-		+ "]";
-    }
-    
-    
-
 }
