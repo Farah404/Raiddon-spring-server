@@ -74,7 +74,7 @@ public class GuildController {
     }
 
     @PostMapping("/guilds/add")
-    public ResponseEntity<Guild> Guild(@RequestBody Guild guild) {
+    public ResponseEntity<Guild> addGuild(@RequestBody Guild guild) {
 	try {
 	    Guild _guild = guildRepo.save(new Guild(guild.getId(), guild.getRank(), guild.getTotalPlayers(),
 		    guild.getRaidsPerWeek(), guild.getGuildName(), guild.getRealm(), guild.getActivities(),
@@ -87,7 +87,7 @@ public class GuildController {
     }
 
     @DeleteMapping("/guilds/{id}")
-    public ResponseEntity<HttpStatus> Guild(@PathVariable("id") long id) {
+    public ResponseEntity<HttpStatus> deleteGuild(@PathVariable("id") long id) {
 	try {
 	    guildRepo.deleteById(id);
 	    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
