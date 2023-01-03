@@ -21,7 +21,7 @@ import fr.isika.al17.raiddonspringserver.models.Guild;
 import fr.isika.al17.raiddonspringserver.repository.GuildRepository;
 
 @RestController
-@CrossOrigin(origins = "http://raiddon.s3-website.eu-west-3.amazonaws.com")
+@CrossOrigin(origins = "\"http://localhost:4200\"")
 @RequestMapping("/api")
 public class GuildController {
 

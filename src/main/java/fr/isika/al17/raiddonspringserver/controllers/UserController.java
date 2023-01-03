@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.isika.al17.raiddonspringserver.models.User;
 import fr.isika.al17.raiddonspringserver.models.UserDTO;
 import fr.isika.al17.raiddonspringserver.repository.UserRepository;
-@CrossOrigin(origins = "http://raiddon.s3-website.eu-west-3.amazonaws.com", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class UserController {
