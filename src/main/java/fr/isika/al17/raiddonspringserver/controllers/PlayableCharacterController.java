@@ -23,7 +23,7 @@ import fr.isika.al17.raiddonspringserver.models.PlayableCharacterDTO;
 import fr.isika.al17.raiddonspringserver.repository.PlayableCharacterRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://raiddon.s3-website.eu-west-3.amazonaws.com")
 @RequestMapping("/api")
 public class PlayableCharacterController {
 

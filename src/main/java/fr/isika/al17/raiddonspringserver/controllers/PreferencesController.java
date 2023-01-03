@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.isika.al17.raiddonspringserver.models.Preferences;
 import fr.isika.al17.raiddonspringserver.repository.PreferencesRepository;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://raiddon.s3-website.eu-west-3.amazonaws.com")
 @RestController
 @RequestMapping("/api")
 public class PreferencesController {
