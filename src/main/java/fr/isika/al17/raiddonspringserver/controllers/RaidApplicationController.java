@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import fr.isika.al17.raiddonspringserver.models.RaidApplication;
 import fr.isika.al17.raiddonspringserver.repository.RaidApplicationRepository;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+@CrossOrigin(origins = "https://raiddon.herokuapp.com", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class RaidApplicationController {

@@ -17,7 +17,7 @@ import fr.isika.al17.raiddonspringserver.models.Items;
 import fr.isika.al17.raiddonspringserver.repository.ItemsRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://raiddon.herokuapp.com")
 @RequestMapping("/api")
 public class ItemsController {
     

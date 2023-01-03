@@ -21,7 +21,7 @@ import fr.isika.al17.raiddonspringserver.models.RaidRequirements;
 import fr.isika.al17.raiddonspringserver.repository.RaidRequirementsRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://raiddon.herokuapp.com")
 @RequestMapping("/api")
 public class RaidRequirementsController {
 
